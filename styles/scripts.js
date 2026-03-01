@@ -1,25 +1,21 @@
-// Ця функція додає клас, який робить сайт видимим
+// --- 1. Логіка завантаження та переходів сторінок ---
 function showPage() {
     document.body.classList.add('loaded');
 }
 
-// 1. Спрацьовує, коли завантажилися всі картинки та стилі
 window.addEventListener('load', showPage);
-
-// 2. Спрацьовує, якщо ви натиснули кнопку "Назад"
 window.addEventListener('pageshow', (event) => {
     if (event.persisted) showPage();
 });
 
-// 3. (Запобіжник) Якщо через 3 секунди сторінка все ще біла — показуємо примусово
 setTimeout(() => {
     if (!document.body.classList.contains('loaded')) {
         showPage();
-        console.warn("Сайт показано примусово (load event затримався)");
+        console.warn("Сайт показано примусово");
     }
 }, 3000);
 
-// Плавний вихід при натисканні на посилання (твій код без змін)
+// Плавний вихід при переході по посиланнях
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', (e) => {
         if (link.hostname !== window.location.hostname || link.hash || link.target === "_blank") return;
@@ -34,66 +30,53 @@ document.querySelectorAll('nav a').forEach(link => {
     });
 });
 
+// --- 2. Логіка активних пунктів меню та Модального вікна (об'єднано) ---
 document.addEventListener("DOMContentLoaded", function() {
-    // Отримуємо поточну адресу сторінки (тільки шлях, наприклад /works.html)
+    
+    // Активне посилання в меню
     const currentPath = window.location.pathname.split("/").pop();
-
-    // Знаходимо всі посилання в навігації
     const navLinks = document.querySelectorAll('nav a');
 
     navLinks.forEach(link => {
-        // Отримуємо назву файлу з атрибута href (наприклад index.html)
         const linkPath = link.getAttribute('href');
-
-        // Якщо шлях збігається — додаємо клас .active
         if (currentPath === linkPath || (currentPath === "" && linkPath === "index.html")) {
             link.classList.add('active');
         }
     });
-});
 
-document.addEventListener("DOMContentLoaded", function() {
+    // МОДАЛЬНЕ ВІКНО
     const modal = document.getElementById("orderModal");
     const openBtns = document.querySelectorAll(".open-modal");
     const closeBtn = document.querySelector(".modal-close");
 
-    // Відкриття
-    openBtns.forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            modal.style.display = "flex"; // Спочатку вмикаємо відображення
-            
-            // Маленька затримка, щоб анімація opacity спрацювала
-            setTimeout(() => {
-                modal.classList.add("active");
-            }, 10);
-            
-            document.body.style.overflow = "hidden";
-        });
-    });
+    if (!modal) return; // Запобіжник, якщо на сторінці немає модалки
 
-    // Закриття
-    function closeModal() {
-        modal.classList.remove("active");
-        
-        // Чекаємо завершення анімації (0.6с), перед тим як повністю сховати блок
-        setTimeout(() => {
-            if (!modal.classList.contains("active")) {
-                modal.style.display = "none";
-            }
-        }, 600);
-        
-        document.body.style.overflow = "auto";
+    function openModal(e) {
+        if (e) e.preventDefault();
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden"; 
     }
 
-    closeBtn.addEventListener("click", closeModal);
+    function closeModal() {
+        modal.classList.remove("active");
+        document.body.style.overflow = ""; 
+    }
 
-    window.addEventListener("click", (e) => {
+    // Відкриття при кліку на будь-яку кнопку "Замовити"
+    openBtns.forEach(btn => btn.addEventListener("click", openModal));
+
+    // Закриття на хрестик
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+
+    // Закриття при кліку на фон (оверлей)
+    modal.addEventListener("click", (e) => {
         if (e.target === modal) closeModal();
     });
 
-    // Закриття на Escape
+    // Закриття при натисканні Escape (дуже зручно)
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeModal();
+        if (e.key === "Escape" && modal.classList.contains("active")) {
+            closeModal();
+        }
     });
 });

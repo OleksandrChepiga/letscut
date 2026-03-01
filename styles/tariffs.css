@@ -2,26 +2,21 @@
    СЕКЦІЯ ТАРИФІВ (ADEVE MEDIA)
    ========================================================================== */
 
-/* Загальний фон секції та вирівнювання */
-.tariffs-section {
+   .tariffs-section {
     padding: 80px 5%;
     background-color: #f0f2f5;
     display: flex;
-    flex-direction: column; /* Елементи (заголовок, острів) один під одним */
-    align-items: center;    /* Центрування по горизонталі */
+    flex-direction: column;
+    align-items: center;
 }
-
-/* --- Заголовки (Винесені наверх) --- */
 
 .tariffs-subtitle {
     font-family: 'Manrope', sans-serif;
     color: #777;
-    margin-bottom: 50px; /* Відступ до білого острова */
+    margin-bottom: 50px;
     text-align: center;
     margin-top: -35px;
 }
-
-/* --- Контейнер "Острів" --- */
 
 .tariffs-container {
     max-width: 1100px;
@@ -33,16 +28,12 @@
     box-sizing: border-box;
 }
 
-/* --- Сітка тарифів (Десктоп) --- */
-
 .tariffs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 30px;
     align-items: stretch;
 }
-
-/* --- Картка тарифу --- */
 
 .tariff-card {
     background: #fdfdfd;
@@ -61,17 +52,10 @@
     border-color: #007bff;
 }
 
-/* Виділення картки (featured) */
 .tariff-card.featured {
     border: 2px solid #007bff;
     background: #fff;
     box-shadow: 0 20px 40px rgba(0, 123, 255, 0.1);
-}
-
-.tariff-icon {
-    width: 60px;
-    margin-bottom: 15px;
-    display: block;
 }
 
 .tariff-header h3 {
@@ -104,13 +88,12 @@
     font-weight: 400;
 }
 
-/* Список можливостей */
 .tariff-features {
     list-style: none;
     padding: 0;
     margin: 0 0 35px 0;
     text-align: left;
-    flex-grow: 1; /* Виштовхує кнопку в самий низ */
+    flex-grow: 1;
 }
 
 .tariff-features li {
@@ -130,7 +113,6 @@
     font-weight: bold;
 }
 
-/* Кнопка */
 .tariff-btn {
     display: block;
     padding: 15px 5px;
@@ -149,74 +131,76 @@
     background-color: #0056b3;
 }
 
-.featured .tariff-btn {
-    background-color: #000;
-}
-
-.featured .tariff-btn:hover {
-    background-color: #333;
-}
-
 /* ==========================================================================
-   АДАПТИВНІСТЬ (Мобільна карусель)
+   МОДАЛЬНЕ ВІКНО (POPUP)
    ========================================================================== */
 
-/* ==========================================================================
-   АДАПТИВНІСТЬ (Мобільна карусель з однаковою висотою карток)
-   ========================================================================== */
-/* Оверлей (задній фон) */
-.modal-overlay {
+   .modal-overlay {
     position: fixed;
+    /* Використовуємо 0 для всіх сторін, щоб заповнити екран */
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0); /* Початково повністю прозорий */
-    backdrop-filter: blur(0px); /* Початково без розмиття */
-    -webkit-backdrop-filter: blur(0px);
     
-    display: none; /* Використовуємо display: flex в JS, але анімуємо opacity */
+    /* Колір фону з прозорістю */
+    background: rgba(255, 255, 255, 0.4); 
+    
+    /* Ефект розмиття (iOS потребує префікс -webkit) */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    
+    display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10000;
+    
+    /* Максимальний пріоритет, щоб перекрити меню та шапку */
+    z-index: 999999; 
+    
+    /* Плавна поява */
+    visibility: hidden;
     opacity: 0;
-    transition: 
-        opacity 0.6s ease-in-out, 
-        backdrop-filter 0.6s ease-in-out;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .modal-overlay.active {
+    visibility: visible;
     opacity: 1;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
 
-/* Вікно */
 .modal-content {
     background: #ffffff;
-    padding: 45px 35px;
+    padding: 40px 30px;
     border-radius: 24px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
-    max-width: 380px;
-    width: 90%;
-    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    max-width: 360px;
+    width: 85%;
     position: relative;
-    /* Тільки зміна прозорості для самої картки */
+    text-align: center;
+    
+    /* Плавна поява самого вікна */
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
+
 .modal-overlay.active .modal-content {
     opacity: 1;
+    transform: translateY(0);
 }
 
 .modal-content h3 {
     font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     margin-bottom: 25px;
     color: #222;
 }
 
-/* Кнопки всередині */
 .modal-buttons {
     display: flex;
     flex-direction: column;
@@ -230,29 +214,28 @@
     padding: 15px;
     border-radius: 12px;
     color: white !important;
-    transition: 0.2s;
+    font-size: 16px;
+    transition: 0.3s;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .tg { background-color: #0088cc; }
 .fb { background-color: #1877f2; }
-.tally { 
-    background-color: #000000; 
-    color: #ffffff; 
-} /* Ваш основний синій */
+.tally { background-color: #000000; }
 
 .modal-link:hover {
     filter: brightness(1.1);
+    transform: translateY(-2px);
 }
 
-/* Кнопка закриття */
 .modal-close {
     position: absolute;
     top: 15px;
     right: 15px;
     background: #f8f9fa;
     border: none;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     font-size: 20px;
     cursor: pointer;
@@ -268,58 +251,63 @@
     color: #333;
 }
 
- @media (max-width: 768px) {
-    /* 1. Зменшуємо загальні відступи секції зверху та знизу */
+/* ==========================================================================
+   АДАПТИВНІСТЬ
+   ========================================================================== */
+
+@media (max-width: 768px) {
     .tariffs-section {
-        padding: 40px 5% !important; /* Було 80px, стало 40px */
+        padding: 40px 5% !important;
     }
 
-    .tariff-card {
-        margin-bottom: -20px;
-        margin-top: -10px;
-    }
-    .tariff-header h3 {
-        margin-top: 10px;
-    }
-
-    /* 2. Зменшуємо проміжок під заголовком */
     .section-title {
-        font-size: 1.8rem; /* Трохи менший шрифт, щоб не було порожнечі */
-        margin-bottom: -100px !important; /* Було 50px, це прибере дірку */
+        font-size: 1.8rem;
+        margin-bottom: -100px !important;
     }
-    /* 3. Коригуємо підзаголовок та відступ до "острова" */
+
     .tariffs-subtitle {
-        margin-top: -40px !important; /* Прибираємо від'ємний маржин */
-        margin-bottom: 50px !important; /* Було 50px - скорочуємо до острова */
+        margin-top: -40px !important;
+        margin-bottom: 50px !important;
     }
 
-    /* 4. Робимо внутрішній відступ острова компактнішим */
     .tariffs-container {
-        padding: 30px 10px !important; /* Було 40px 15px */
-        width: 100%;
-        overflow: hidden; 
-        box-sizing: border-box;
+        padding: 30px 10px !important;
     }
 
-    /* --- Твій існуючий код для каруселі залишається без змін --- */
     .tariffs-grid {
         display: flex !important;
         align-items: stretch !important;
         overflow-x: auto !important;
         scroll-snap-type: x mandatory;
         gap: 20px;
-        padding: 10px 5px 20px 5px; /* Оптимізували падінги сітки */
-        -webkit-overflow-scrolling: touch; 
+        padding: 10px 5px 20px 5px;
         scrollbar-width: none; 
     }
 
+    .tariffs-grid::-webkit-scrollbar {
+        display: none;
+    }
+
     .tariff-card {
-        min-width: 280px !important; /* Можна трохи звузити для кращого вигляду */
-        flex-shrink: 0 !important;   
-        scroll-snap-align: center;   
-        transform: scale(1) !important; 
-        display: flex;
-        flex-direction: column;
-        padding: 25px 20px !important; /* Зменшуємо внутрішній падінг картки */
+        min-width: 280px !important;
+        flex-shrink: 0 !important;
+        scroll-snap-align: center;
+        padding: 25px 20px !important;
+    }
+    .modal-overlay {
+        /* Fix для мобільних браузерів, щоб фон не «стрибав» при появі клавіатури */
+        height: -webkit-fill-available; 
+        align-items: center; /* Центруємо вікно строго посередині */
+    }
+
+    .modal-content {
+        padding: 35px 20px;
+        width: 88%; /* Трохи ширше на малих екранах */
+    }
+    
+    /* Робимо кнопки зручнішими для натискання пальцем */
+    .modal-link {
+        padding: 18px !important;
+        font-size: 17px !important;
     }
 }
