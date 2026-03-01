@@ -1,0 +1,71 @@
+/* Основний контейнер */
+.main-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 150px 150px 80px;
+    max-width: 1200px;
+    margin-bottom: 100px;
+}
+
+/* Стилі для фото/лого */
+.main-logo img {
+    max-width: 450px;
+    height: auto;
+    display: block;
+}
+
+/* Стилі для тексту */
+.main-content {
+    text-align: left;
+}
+
+.main-content h1 {
+    /* Використовуємо твій Century Gothic */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 400; /* Жирний */
+    margin: 0;
+    color: #808080;
+    line-height: 1.1;
+}
+
+.main-content p {
+    /* Використовуємо твій Gotham */
+    font-family: 'Gotham', sans-serif;
+    font-size: 24px;
+    font-weight: 400; /* Medium жирність */
+    color: #808080;
+    margin-top: 5px;
+    letter-spacing: 0.5px; /* Невеликий відступ для Gotham */
+}
+
+/* --- АДАПТИВНІСТЬ ДЛЯ ТЕЛЕФОНІВ --- */
+@media (max-width: 768px) {
+    .main-box {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+        gap: 20px;
+    }
+
+    .main-content {
+        text-align: center;
+    }
+
+    .main-logo img {
+        max-width: 250px;
+    }
+
+    .main-content h1 {
+        margin-top: -40px;
+        font-size: 16px; 
+    }
+
+    .main-content p {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+}

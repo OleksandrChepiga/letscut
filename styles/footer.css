@@ -1,0 +1,82 @@
+/* Основний контейнер футера */
+.footer-box {
+    background-color: #ffffff;
+    padding: 50px 0;
+    width: 100%;
+}
+/* Внутрішній обмежувач ширини, щоб контент не розповзався на надшироких моніторах */
+.footer-container {
+    background-color: #ffffff;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+}
+/* Стилі для логотипу */
+.footer-logo {
+    height: 140px; /* Налаштуй висоту під свій логотип */
+    width: auto;
+    display: block;
+}
+/* Стилі для тексту праворуц */
+.footer-right {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px; /* 32px може бути завеликим для футера, спробуй 24px */
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+}
+.footer-name  {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px; /* 32px може бути завеликим для футера, спробуй 24px */
+    font-weight: 500;
+    color: #333;
+}
+.footer-name a {
+    text-decoration: none;
+    color: #333;
+    transition: 0.15s;
+}
+.footer-name a:hover {
+    color: #0066ff;
+}
+.footer-text {
+    margin-top: 25px;
+    font-family: 'Manrope';
+    font-size: 14px;
+    line-height: 7px;
+}
+.footer-text p {
+    display: flex;         /* Вмикаємо гнучкий контейнер для рядка */
+    align-items: center;    /* Вирівнює іконку та текст по центру по вертикалі */
+    gap: 8px;              /* Відступ між іконкою та текстом */
+    margin: 5px 0;         /* Відступи між абзацами */
+    line-height: 1.4;      /* Нормальна висота рядка для читабельності */
+    text-decoration: none;
+}
+.icon {
+    height: 20px;          /* Задаємо фіксовану висоту іконки */
+    width: auto;           /* Зберігаємо пропорції */
+    display: block;        /* Прибираємо зайві відступи знизу */ 
+}
+/* Додай відступ після ком, щоб посилання мали пробіли */
+.footer-text a {
+    text-decoration: none;
+    color: #333;
+    transition: 0.15s;
+}
+
+.footer-text a:hover {
+    color: #0066ff;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}

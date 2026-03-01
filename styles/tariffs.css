@@ -1,0 +1,325 @@
+/* ==========================================================================
+   СЕКЦІЯ ТАРИФІВ (ADEVE MEDIA)
+   ========================================================================== */
+
+/* Загальний фон секції та вирівнювання */
+.tariffs-section {
+    padding: 80px 5%;
+    background-color: #f0f2f5;
+    display: flex;
+    flex-direction: column; /* Елементи (заголовок, острів) один під одним */
+    align-items: center;    /* Центрування по горизонталі */
+}
+
+/* --- Заголовки (Винесені наверх) --- */
+
+.tariffs-subtitle {
+    font-family: 'Manrope', sans-serif;
+    color: #777;
+    margin-bottom: 50px; /* Відступ до білого острова */
+    text-align: center;
+    margin-top: -35px;
+}
+
+/* --- Контейнер "Острів" --- */
+
+.tariffs-container {
+    max-width: 1100px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 60px 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+/* --- Сітка тарифів (Десктоп) --- */
+
+.tariffs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* --- Картка тарифу --- */
+
+.tariff-card {
+    background: #fdfdfd;
+    border: 1px solid #f0f0f0;
+    padding: 40px 30px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.tariff-card:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: #007bff;
+}
+
+/* Виділення картки (featured) */
+.tariff-card.featured {
+    border: 2px solid #007bff;
+    background: #fff;
+    box-shadow: 0 20px 40px rgba(0, 123, 255, 0.1);
+}
+
+.tariff-icon {
+    width: 60px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.tariff-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    color: #222222;
+    text-align: left;
+    margin-bottom: -7px;
+}
+
+.tariff-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #a7a7a7;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 550;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.price span {
+    font-size: 18px;
+    color: hsl(0, 0%, 39%);
+    font-weight: 400;
+}
+
+/* Список можливостей */
+.tariff-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 35px 0;
+    text-align: left;
+    flex-grow: 1; /* Виштовхує кнопку в самий низ */
+}
+
+.tariff-features li {
+    font-family: 'Manrope', sans-serif;
+    padding: 10px 0;
+    color: #4e4e4e;
+    border-bottom: 2px solid #eeeeee;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.tariff-features li::before {
+    content: "✓";
+    color: #007bff;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Кнопка */
+.tariff-btn {
+    display: block;
+    padding: 15px 5px;
+    background-color: #007bff;
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: auto;
+}
+
+.tariff-btn:hover {
+    background-color: #0056b3;
+}
+
+.featured .tariff-btn {
+    background-color: #000;
+}
+
+.featured .tariff-btn:hover {
+    background-color: #333;
+}
+
+/* ==========================================================================
+   АДАПТИВНІСТЬ (Мобільна карусель)
+   ========================================================================== */
+
+/* ==========================================================================
+   АДАПТИВНІСТЬ (Мобільна карусель з однаковою висотою карток)
+   ========================================================================== */
+/* Оверлей (задній фон) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0); /* Початково повністю прозорий */
+    backdrop-filter: blur(0px); /* Початково без розмиття */
+    -webkit-backdrop-filter: blur(0px);
+    
+    display: none; /* Використовуємо display: flex в JS, але анімуємо opacity */
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: 
+        opacity 0.6s ease-in-out, 
+        backdrop-filter 0.6s ease-in-out;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Вікно */
+.modal-content {
+    background: #ffffff;
+    padding: 45px 35px;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+    max-width: 380px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    /* Тільки зміна прозорості для самої картки */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.modal-overlay.active .modal-content {
+    opacity: 1;
+}
+
+.modal-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+/* Кнопки всередині */
+.modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 12px;
+    color: white !important;
+    transition: 0.2s;
+}
+
+.tg { background-color: #0088cc; }
+.fb { background-color: #1877f2; }
+.tally { 
+    background-color: #000000; 
+    color: #ffffff; 
+} /* Ваш основний синій */
+
+.modal-link:hover {
+    filter: brightness(1.1);
+}
+
+/* Кнопка закриття */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #f8f9fa;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.modal-close:hover {
+    background: #eee;
+    color: #333;
+}
+
+ @media (max-width: 768px) {
+    /* 1. Зменшуємо загальні відступи секції зверху та знизу */
+    .tariffs-section {
+        padding: 40px 5% !important; /* Було 80px, стало 40px */
+    }
+
+    .tariff-card {
+        margin-bottom: -20px;
+        margin-top: -10px;
+    }
+    .tariff-header h3 {
+        margin-top: 10px;
+    }
+
+    /* 2. Зменшуємо проміжок під заголовком */
+    .section-title {
+        font-size: 1.8rem; /* Трохи менший шрифт, щоб не було порожнечі */
+        margin-bottom: -100px !important; /* Було 50px, це прибере дірку */
+    }
+    /* 3. Коригуємо підзаголовок та відступ до "острова" */
+    .tariffs-subtitle {
+        margin-top: -40px !important; /* Прибираємо від'ємний маржин */
+        margin-bottom: 50px !important; /* Було 50px - скорочуємо до острова */
+    }
+
+    /* 4. Робимо внутрішній відступ острова компактнішим */
+    .tariffs-container {
+        padding: 30px 10px !important; /* Було 40px 15px */
+        width: 100%;
+        overflow: hidden; 
+        box-sizing: border-box;
+    }
+
+    /* --- Твій існуючий код для каруселі залишається без змін --- */
+    .tariffs-grid {
+        display: flex !important;
+        align-items: stretch !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory;
+        gap: 20px;
+        padding: 10px 5px 20px 5px; /* Оптимізували падінги сітки */
+        -webkit-overflow-scrolling: touch; 
+        scrollbar-width: none; 
+    }
+
+    .tariff-card {
+        min-width: 280px !important; /* Можна трохи звузити для кращого вигляду */
+        flex-shrink: 0 !important;   
+        scroll-snap-align: center;   
+        transform: scale(1) !important; 
+        display: flex;
+        flex-direction: column;
+        padding: 25px 20px !important; /* Зменшуємо внутрішній падінг картки */
+    }
+}

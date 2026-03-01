@@ -1,0 +1,110 @@
+/* Загальний контейнер секції */
+.schedule-section {
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Заголовок "Графік" */
+.schedule-main-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.weekly-calendar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Більший відступ між картками */
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 0;
+}
+
+.calendar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    /* Збільшуємо розміри */
+    width: 100px; 
+    min-height: 70px; /* Ось тут ми додаємо висоту */
+    
+    padding: 20px 10px;
+    border-radius: 15px;
+    background: #fff;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+
+/* Робочі дні */
+.calendar-item.work {
+    border-top: 5px solid #0066ff;
+}
+
+.calendar-item.work .day {
+    color: #333;
+    font-family: 'Century Gothic Bold', sans-serif;
+    font-size: 22px; /* Більший шрифт для дня */
+}
+
+.calendar-item.work .status {
+    color: #0066ff;
+    font-size: 11px;
+    font-family: 'Gotham Medium', sans-serif;
+    text-transform: uppercase;
+    margin-top: 12px;
+}
+
+/* Вихідні дні */
+.calendar-item.off {
+    background-color: #fafafa;
+    border-top: 5px solid #d1d1d1;
+}
+
+.calendar-item.off .day {
+    color: #999;
+    font-family: 'Century Gothic Custom', sans-serif;
+    font-size: 22px;
+}
+
+.calendar-item.off .status {
+    color: #aaa;
+    font-size: 10px;
+    font-family: 'Gotham Medium', sans-serif;
+    text-transform: uppercase;
+    margin-top: 12px;
+}
+
+/* Примітка знизу */
+.calendar-note {
+    width: 100%;
+    font-family: 'Century Gothic Custom', sans-serif;
+    font-size: 14px;
+    color: #888;
+    margin-top: 25px;
+    font-style: italic;
+}
+
+/* Адаптивність для телефонів */
+@media (max-width: 768px) {
+    .calendar-item {
+        width: 80px;
+        min-height: 70px;
+        padding: 15px 5px;
+    }
+    
+    .calendar-item .day {
+        font-size: 18px;
+    }
+    
+    .schedule-main-title {
+        font-size: 22px;
+    }
+}
