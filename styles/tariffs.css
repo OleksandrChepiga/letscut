@@ -2,7 +2,7 @@
    СЕКЦІЯ ТАРИФІВ (ADEVE MEDIA)
    ========================================================================== */
 
-   .tariffs-section {
+.tariffs-section {
     padding: 80px 5%;
     background-color: #f0f2f5;
     display: flex;
@@ -262,7 +262,7 @@
     .section-title {
         font-size: 1.8rem;
         /* Прибрав від'ємний margin, щоб заголовок не налізав на контент */
-        margin-bottom: 20px !important; 
+        margin-bottom: 5px !important; 
     }
 
     .tariffs-subtitle {
