@@ -48,7 +48,6 @@
 }
 
 .tariff-card:hover {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     border-color: #007bff;
 }
 
@@ -255,57 +254,55 @@
    АДАПТИВНІСТЬ
    ========================================================================== */
 
-@media (max-width: 768px) {
+   @media (max-width: 768px) {
     .tariffs-section {
         padding: 40px 5% !important;
     }
 
     .section-title {
         font-size: 1.8rem;
-        margin-bottom: -100px !important;
+        /* Прибрав від'ємний margin, щоб заголовок не налізав на контент */
+        margin-bottom: 20px !important; 
     }
 
     .tariffs-subtitle {
-        margin-top: -40px !important;
-        margin-bottom: 50px !important;
+        margin-top: 0 !important;
+        margin-bottom: 30px !important;
     }
 
     .tariffs-container {
-        padding: 30px 10px !important;
+        padding: 30px 15px !important; /* Трохи більше відступів по боках */
     }
 
     .tariffs-grid {
-        display: flex !important;
-        align-items: stretch !important;
-        overflow-x: auto !important;
-        scroll-snap-type: x mandatory;
-        gap: 20px;
-        padding: 10px 5px 20px 5px;
-        scrollbar-width: none; 
-    }
-
-    .tariffs-grid::-webkit-scrollbar {
-        display: none;
+        /* Змінюємо flex на grid для вертикального списку */
+        display: grid !important; 
+        grid-template-columns: 1fr; /* Одна колонка на всю ширину */
+        gap: 25px; /* Відступ між картками */
+        overflow-x: visible !important; /* Вимикаємо скрол */
+        padding: 0;
     }
 
     .tariff-card {
-        min-width: 280px !important;
-        flex-shrink: 0 !important;
-        scroll-snap-align: center;
-        padding: 25px 20px !important;
+        min-width: 0 !important; /* Скидаємо обмеження ширини */
+        width: 100%;
+        flex-shrink: 1 !important;
+        scroll-snap-align: none; /* Прибираємо прив'язку скролу */
+        padding: 30px 20px !important;
     }
+
+    /* Модальне вікно */
     .modal-overlay {
-        /* Fix для мобільних браузерів, щоб фон не «стрибав» при появі клавіатури */
+        height: 100%; /* Стандартне значення */
         height: -webkit-fill-available; 
-        align-items: center; /* Центруємо вікно строго посередині */
+        align-items: center;
     }
 
     .modal-content {
         padding: 35px 20px;
-        width: 88%; /* Трохи ширше на малих екранах */
+        width: 90%;
     }
     
-    /* Робимо кнопки зручнішими для натискання пальцем */
     .modal-link {
         padding: 18px !important;
         font-size: 17px !important;
