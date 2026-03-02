@@ -254,7 +254,7 @@
    АДАПТИВНІСТЬ
    ========================================================================== */
 
-   @media (max-width: 768px) {
+@media (max-width: 768px) {
     .tariffs-section {
         padding: 40px 5% !important;
     }
@@ -262,11 +262,10 @@
     .section-title {
         font-size: 1.8rem;
         /* Прибрав від'ємний margin, щоб заголовок не налізав на контент */
-        margin-bottom: 5px !important; 
     }
 
     .tariffs-subtitle {
-        margin-top: 0 !important;
+        margin-top: -40px !important;
         margin-bottom: 30px !important;
     }
 

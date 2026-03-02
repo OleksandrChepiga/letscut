@@ -1,0 +1,135 @@
+/* ==========================================================================
+   СЕКЦІЯ КОНТАКТІВ (У СТИЛІ ТАРИФІВ)
+   ========================================================================== */
+
+   .contacts-section {
+    padding: 80px 5%;
+    background-color: #f0f2f5; /* Світлий фон як у тарифів */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.contacts-subtitle {
+    font-family: 'Manrope', sans-serif;
+    color: #777;
+    margin-bottom: 50px;
+    text-align: center;
+    margin-top: -35px;
+}
+
+.contacts-container {
+    max-width: 1100px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 60px 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    align-items: stretch;
+}
+
+.contact-card {
+    background: #fdfdfd;
+    border: 1px solid #f0f0f0;
+    padding: 40px 30px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.contact-card:hover {
+    border-color: #007bff;
+}
+
+.contact-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: #222222;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+/* Список контактів всередині картки */
+.contact-links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #4e4e4e;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-item:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+.contact-icon {
+    width: 20px;
+    height: 20px;
+}
+
+
+.tg { 
+    background-color: #0088cc;
+    color: #ffffff; }
+.fb { 
+    background-color: #1877f2;
+    color: #ffffff; }
+.gm { 
+    background-color: #000000;
+    color: #ffffff; }
+.yt { 
+    background-color: #ec0707;
+    color: #ffffff; }
+/* ==========================================================================
+   АДАПТИВНІСТЬ (АНАЛОГІЧНО ТАРИФАМ)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .contacts-section {
+        padding: 40px 5% !important;
+    }
+
+    .contacts-subtitle {
+        margin-top: -40px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .contacts-container {
+        padding: 30px 15px !important;
+    }
+
+    .contacts-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-card {
+        padding: 30px 20px !important;
+    }
+}
