@@ -1,135 +1,100 @@
-/* ==========================================================================
-   СЕКЦІЯ КОНТАКТІВ (У СТИЛІ ТАРИФІВ)
-   ========================================================================== */
-
-   .contacts-section {
-    padding: 80px 5%;
-    background-color: #f0f2f5; /* Світлий фон як у тарифів */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 70vh;
-}
-
-.contacts-subtitle {
-    font-family: 'Manrope', sans-serif;
-    color: #777;
-    margin-bottom: 50px;
+.contacts-section {
+    padding: 30px 20px;
     text-align: center;
-    margin-top: -35px;
-}
-
-.contacts-container {
-    max-width: 1100px;
-    width: 100%;
-    background-color: #ffffff;
-    padding: 60px 50px;
-    border-radius: 20px;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.05);
-    box-sizing: border-box;
 }
 
 .contacts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    display: flex;
+    justify-content: center;
     gap: 30px;
-    align-items: stretch;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 .contact-card {
-    background: #fdfdfd;
-    border: 1px solid #f0f0f0;
-    padding: 40px 30px;
-    border-radius: 15px;
-    transition: all 0.3s ease;
+    background: #ffffff; /* Білий колір картки */
+    border: 1px solid #e7e7e7;
+    padding: 40px 1px;
+    border-radius: 12px;
+    width: 280px;
+    box-shadow: 0 2px 10px #00000033;
+    transition: 0.3s ease;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    box-sizing: border-box;
+    align-items: center;
+    border-top: 3px solid #007bff;
 }
 
 .contact-card:hover {
-    border-color: #007bff;
+    transform: translateY(-3px); /* Легке підняття при наведенні */
+    box-shadow: 0 15px 30px #00000033;
 }
 
-.contact-card h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    color: #222222;
-    margin-bottom: 25px;
-    position: relative;
-}
-
-/* Список контактів всередині картки */
-.contact-links-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    flex-grow: 1;
-}
-
-.contact-item {
+.contact-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #f0f4f8;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    padding: 15px;
-    background: #ffffff;
-    border-radius: 12px;
+    margin-bottom: 15px;
+    line-height: 0; /* Прибирає текстові відступи */
+    overflow: hidden; /* Щоб іконка точно не виходила за межі */
+}
+
+.contact-icon img {
+    width: 45px;
+    height: 45px;
+    display: block; /* Прибирає дефолтний відступ знизу */
+    margin: 0 auto; /* Додаткове страхування по центру */
+}
+.contact-card h3 {
+    font-family: 'SegoeUI';
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: -12.5px;
+    font-size: 24px;
+    color: #333;
+}
+
+.contact-card p a {
+    font-family: 'SegoeUI';
+    font-weight: 400;
+    color: #007bff;
     text-decoration: none;
-    color: #4e4e4e;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s;
+    font-size: 15px;
 }
 
-.contact-item:hover {
-    filter: brightness(1.1);
-    transform: translateY(-2px);
-}
-.contact-icon {
-    width: 20px;
-    height: 20px;
+.contact-card p a:hover {
+    text-decoration: underline;
 }
 
-
-.tg { 
-    background-color: #0088cc;
-    color: #ffffff; }
-.fb { 
-    background-color: #1877f2;
-    color: #ffffff; }
-.gm { 
-    background-color: #000000;
-    color: #ffffff; }
-.yt { 
-    background-color: #ec0707;
-    color: #ffffff; }
 /* ==========================================================================
-   АДАПТИВНІСТЬ (АНАЛОГІЧНО ТАРИФАМ)
+   MOBILE ADAPTATION
    ========================================================================== */
+
+@media (max-width: 992px) {
+    .contacts-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки для планшетів */
+    }
+}
 
 @media (max-width: 768px) {
     .contacts-section {
-        padding: 40px 5% !important;
+        padding: 50px 0;
     }
-
-    .contacts-subtitle {
-        margin-top: -40px !important;
-        margin-bottom: 30px !important;
-    }
-
-    .contacts-container {
-        padding: 30px 15px !important;
-    }
-
+    
     .contacts-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 колонка для телефонів */
         gap: 20px;
     }
 
+    .contacts-container {
+        margin-top: 30px;
+    }
+
     .contact-card {
-        padding: 30px 20px !important;
+        padding: 30px 15px;
     }
 }

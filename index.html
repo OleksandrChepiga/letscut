@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    <title>letscut - Якісний та доступний відеомонтаж по всій Україні</title>
-    <meta name="description" content="Чудовий сервіс з відеомонтажу, який доступний всім за хорошими цінами" />
+    <title>Відеомонтаж від letscut</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,9 +15,10 @@
     <link rel="stylesheet" href="styles/tariffs.css">
     <link rel="stylesheet" href="styles/portfolio.css">
     <link rel="stylesheet" href="styles/footer.css">
-    <link rel="stylesheet" href="styles/donate.css">
     <link rel="stylesheet" href="styles/work-schedule.css">
     <link rel="stylesheet" href="styles/autor.css">
+    <link rel="stylesheet" href="styles/faq.css">
+    <link rel="stylesheet" href="styles/contacts.css">
     <link rel="icon" type="image/png" href="logo.png">
     <script src="styles/burger-nav-scripts.js" defer></script>
     <script src="styles/scripts.js" defer></script>
@@ -33,116 +33,337 @@
         </div>
     
         <nav id="nav-menu">
-            <a href="/" class="active">Головна</a>
-            <a href="works">Роботи</a>
-            <a href="tariffs">Тарифи</a>
-            <a href="contacts">Контакти</a>
+            <a href="#hero">Головна</a>
+            <a href="#about">Про автора</a>
+            <a href="#schedule">Графік</a>
+            <a href="#works">Роботи</a>
+            <a href="#tariffs">Тарифи</a>
+            <a href="#faq">F.A.Q</a>
+            <a href="#contacts">Контакти</a>
         </nav>
     </div>
 
 
 
     <main>
-        <div class="main-box">
+        <div id="hero" class="main-box">
             <div class="main-logo">
                 <img src="logo.png" alt="VEA Media Logo">
             </div>
             
             <div class="main-content">
-                <h1>Сервіс якісного й доступного відеомонтажу по всій Україні</h1>
+                <h1>Відеомонтаж відео по всій Україні</h1>
             </div>
         </div>
     </main>
 
 
 
-    <section class="autor-section">
-        <div class="autor-flex-container"> <div class="autor-card">
-                <h1 class="title-inside">Про автора</h1>
+    <section id="about" class="autor-section">
+        <h2 class="section-title">Про автора</h2>
+        <p class="subtitle">Коротко про мене та мій досвід у відеомонтажі</p>
+    
+        <div class="autor-flex-container"> 
+            <div class="autor-card">
                 <div class="autor-text">
-                    <p>Вітаю на сайті послуг відеомонтажу по Україні — <span><a href="index.html" class="site-name">letscut</a></span>. Я Чепіга Олександр Васильович. Я засновник та єдиний працівник цього сайту. Мені 15 років. Займаюся створенням відеороликів для сімейних, шкільних та інших колективів архівних відео, невеликих рекламних відео та іншого.</p>
-                    <p>Наразі працюю в Pinnacle Studio 23 вже 3 рік. Освоїв всі специфічні налаштування програми. Живу поряд із містом Ічня Чернігівської області. Відповідально ставлюся до своєї роботи та клієнтів.</p>
-                    <p>За діловими питаннями чи проблемами звертайтеся до мене в <spn><a href="https://t.me/Oleksandr_Chepiha">Telegram,</a></spn> або <spn><a href="https://www.facebook.com/share/18JZbQisNv/?mibextid=wwXIfr">Facebook</a></spn></p>
+                    <p>Мене звати Олександр Васильович Чепіга, мені 15 і я засновник та провідний спеціаліст сервісу <span><a href="hero" class="site-name">letscut</a></span>. Працюючи по всій Україні, я допомагаю перетворювати ваші розрізнені відеофайли на цілісні історії, які хочеться переглядати знову і знову.</p>
+                    <p>Спеціалізуюся на монтажі сімейних та шкільних архівів, а також створюю невеликі рекламні ролики для колективів чи бізнесу. У роботі використовую CapCut, де досконало освоїв усі професійні налаштування, щоб ваші відео виглядали сучасно та динамічно.</p>
+                    <p>Я проживаю поруч із містом Ічня на Чернігівщині, але працюю дистанційно. Якщо вам потрібен надійний монтаж або є ділові питання — пишіть мені в <span><a href="https://t.me/Oleksandr_Chepiha">Telegram</a></span> або <span><a href="https://www.facebook.com/share/18JZbQisNv/?mibextid=wwXIfr">Facebook</a></span>, я завжди на зв'язку!</p>
                 </div>
             </div>
     
             <div class="autor-photo">
                 <img src="icons/about.jpg" class="autor-png" alt="Олександр Чепіга">
             </div>
-    
         </div>
     </section>
 
 
-
-    <section class="schedule-section">
-        <h3 class="schedule-main-title">Робочі дні</h3>
+    <section id="schedule" class="schedule-section">
+        <h3 class="section-title">Графік роботи</h3>
+        <p class="subtitle">Плануйте замовлення заздалегідь. У вихідні я займаюся монтажем поточних
+            <br>проєктів, тому нові замовлення обробляються лише у робочі дні</p>
         
         <div class="weekly-calendar">
             <div class="calendar-item work">
                 <span class="day">Пн</span>
                 <span class="status">Робочий</span>
+                <span class="time">15:00 - 19:00</span>
             </div>
             <div class="calendar-item work">
                 <span class="day">Вт</span>
                 <span class="status">Робочий</span>
+                <span class="time">15:00 - 19:00</span>
             </div>
             <div class="calendar-item work">
                 <span class="day">Ср</span>
                 <span class="status">Робочий</span>
+                <span class="time">15:00 - 19:00</span>
             </div>
             <div class="calendar-item work">
                 <span class="day">Чт</span>
                 <span class="status">Робочий</span>
+                <span class="time">15:00 - 19:00</span>
             </div>
+    
             <div class="calendar-item off">
                 <span class="day">Пт</span>
                 <span class="status">Вихідний</span>
             </div>
+    
             <div class="calendar-item off">
                 <span class="day">Сб</span>
                 <span class="status">Вихідний</span>
             </div>
+    
             <div class="calendar-item work">
                 <span class="day">Нд</span>
                 <span class="status">Робочий</span>
+                <span class="time">15:00 - 19:00</span>
             </div>
-            <p class="calendar-note">*Переважно вихідні, але звертатися можна завжди</p>
         </div>
     </section>
 
+    <section id="works" class="portfolio-section">
+        <h2 class="section-title">Мої роботи</h2>
+        <p class="subtitle">Натисніть на відео, щоб переглянути його на YouTube</p>
+        
+        <div class="portfolio-grid">
+            
+            <a href="https://www.youtube.com/watch?v=VbtHWREhQgg" target="_blank" class="portfolio-item">
+                <div class="portfolio-image">
+                    <img src="https://img.youtube.com/vi/VbtHWREhQgg/maxresdefault.jpg" alt="Реклама для ЗСУ">
+                    <div class="play-overlay">
+                        <div class="play-icon">
+                            <img src="icons/play.svg" alt="Play">
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Реклама для ЗСУ</h3>
+                    <p>Динамічний монтаж, робота з текстом та звуком.</p>
+                </div>
+            </a>
+    
+            <div class="portfolio-item empty-item">
+                <div class="portfolio-image">
+                    <img src="https://img.youtube.com/vi/ID_ВІДЕО_2/maxresdefault.jpg" alt="Відео відсутнє">
+                    <div class="play-overlay">
+                        <span class="empty-text">Пусто</span>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Відеоролик відсутній</h3>
+                    <p>Опис з'явиться згодом.</p>
+                </div>
+            </div>
+            
+            <div class="portfolio-item empty-item">
+                <div class="portfolio-image">
+                    <img src="https://img.youtube.com/vi/ID_ВІДЕО_3/maxresdefault.jpg" alt="Відео відсутнє">
+                    <div class="play-overlay">
+                        <span class="empty-text">Пусто</span>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Відеоролик відсутній</h3>
+                    <p>Опис з'явиться згодом.</p>
+                </div>
+            </div>
+    
+        </div>
+    </section>
 
+    <section id="tariffs" class="tariffs-section">
+        <h2 class="section-title">Тарифи</h2>
+        <p class="subtitle">Оберіть тарифний пакет, який підходить саме Вам і замовте 
+            <br>через Telegram або Facebook</p>
+
+        <div class="tariffs-container">
+            <div class="tariffs-grid">
+                <div class="tariff-card">
+                    <div class="tariff-header">
+                        <h3>Shorts</h3>
+                        <p class="tariff-desc">Вертикальний формат, для TikTok, Instagram Reels, Youtube Shorts</p>
+                        <div class="price"><span>Від</span> 150 грн<span>/хв</span></div>
+                    </div>
+                    <ul class="tariff-features">
+                        <li>Тривалість відео не більше 1 хв</li>
+                        <li>Динамічний монтаж та субтитри</li>
+                        <li>Накладання трендової музики</li>
+                        <li>До 2 виправлень</li>
+                    </ul>
+                    <a href="javascript:void(0)" class="tariff-btn open-modal">Замовити</a>
+                </div>
+    
+                <div class="tariff-card">
+                    <div class="tariff-header">
+                        <h3>Video</h3>
+                        <p class="tariff-desc">Горизонтальний формат, для Youtube, особистого архіву</p>
+                        <div class="price"><span>Від</span> 240 грн<span>/хв</span></div>
+                    </div>
+                    <ul class="tariff-features">
+                        <li>Тривалість відео не більше 5 хв</li>
+                        <li>Додавання фільтрів та ефектів</li>
+                        <li>Складні переходи та анімації</li>
+                        <li>До 3 виправлень</li>
+                    </ul>
+                    <a href="javascript:void(0)" class="tariff-btn open-modal">Замовити</a>
+                </div>
+    
+                <div class="tariff-card">
+                    <div class="tariff-header">
+                        <h3>Custom</h3>
+                        <p class="tariff-desc">Повна персоналізація, будь-який формат</p>
+                        <div class="price">Договірна</div>
+                    </div>
+                    <ul class="tariff-features">
+                        <li>Тривалість відео необмежена</li>
+                        <li>Складна графіка та ефекти</li>
+                        <li>Звуковий дизайн (SFX)</li>
+                        <li>До 7 виправлень</li>
+                    </ul>
+                    <a href="javascript:void(0)" class="tariff-btn open-modal">Замовити</a>
+                </div>
+            </div> <div id="orderModal" class="modal-overlay">
+                <div class="modal-content">
+                    <button class="modal-close">&times;</button>
+                    <h3>Оберіть зручний спосіб зв'язку</h3>
+                    <div class="modal-buttons">
+                        <a href="https://t.me/Oleksandr_Chepiha" target="_blank" class="modal-link tg">Telegram</a>
+                        <a href="https://www.facebook.com/share/18JZbQisNv/" target="_blank" class="modal-link fb">Facebook</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <h2 class="section-title">F.A.Q</h2>
+        <p class="subtitle">Відповіді на головні можливі питання</p>
+        <div class="faq-container">
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Які терміни виконання монтажу?
+                    <svg class="faq-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="#0066ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Монтаж коротких відео (Shorts) зазвичай займає від 1 до 2 днів. Більш складні проєкти виконуються протягом 2-4 робочих днів залежно від обсягу вихідних матеріалів та кількості правок.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <button class="faq-question">
+                    Як я можу передати великі відеофайли?
+                    <svg class="faq-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="#0066ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Найкраще завантажити їх на Google Диск, WeTransfer або fex.net і надіслати мені посилання. Також можна надсилати файли через Telegram як "Файл" (без стиснення).</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <button class="faq-question">
+                    Чи можна внести зміни у готове відео?
+                    <svg class="faq-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="#0066ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Так, у кожен тариф входить певна кількість безкоштовних правок (від 2 до 7). Я завжди намагаюся довести результат до ідеалу, щоб ви були задоволені. Якщо правок більше, ніж доступно безкоштовно, то кожна наступна додає до загальної ціни 20 грн.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Як оплачується робота?
+                    <svg class="faq-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="#0066ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Оплата роботи здійснюється в повному розмірі (100% від загальної суми) безготівковим переказом на карту після отримання готового варіанту відео з водяним знаком. Після оплати ви отримуєте чисте відео.</p>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+
+    <section id="contacts" class="contacts-section">
+        <h2 class="section-title">Контакти</h2>
+        <p class="subtitle">Оберіть зручний для вас спосіб зв'язку</p>
+    
+        <div class="contacts-container">
+            <div class="contacts-grid">
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <img src="icons/telegram.svg" alt="Telegram">
+                    </div>
+                    <h3>Telegram</h3>
+                    <p><a href="https://t.me/Oleksandr_Chepiha" target="_blank">@Oleksandr_Chepiha</a></p>
+                </div>
+    
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <img src="icons/facebook.svg" alt="Facebook">
+                    </div>
+                    <h3>Facebook</h3>
+                    <p><a href="https://www.facebook.com/share/18JZbQisNv/" target="_blank">Олександр Чепіга</a></p>
+                </div>
+    
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <img src="icons/gmail.svg" alt="Email">
+                    </div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:letscut.ua@gmail.com">letscut.ua@gmail.com</a></p>
+                </div>
+    
+            </div>
+        </div>
+    </section>
 
     <footer class="footer-box">
         <div class="footer-container">
-            <div class="footer-left">
-                <a href="index.html"><img src="logo.png" alt="Adeve Media Logo" class="footer-logo"></a>
-            </div>
             
             <div class="footer-right">
-                <span class="footer-name"><a href="index.html">©letscut.com.ua - Всі права захищені</a></span>
+                <span class="footer-name"><a href="#hero">©letscut.com.ua - Всі права захищені</a></span>
                 <div class="footer-text">
                     <p>
-                        <img src="icon-footer/admin.png" class="icon" alt="update">
                         Сайт був створений і належить Чепізі Олександру Васильовичу
                     </p>
                     <p>
-                        <img src="icon-footer/support.png" class="icon" alt="update">
                         <span>
                             За допомогою звертатися в 
                             <a href="https://www.facebook.com/share/18JZbQisNv/?mibextid=wwXIfr" target="_blank">Facebook,</a> <a href="https://t.me/Oleksandr_Chepiha" target="_blank">Telegram,</a> або на <a href="mailto:oleksandrchepiga2023@gmail.com" target="_blank">Gmail пошту</a>
                         </span>
                     </p>
                     <p>
-                        <img src="icon-footer/updates.png" class="icon" alt="update">
-                        Останнє оновлення сайту відбулося 02.03.2026 в 14:52
+                        Останнє оновлення сайту відбулося 03.03.2026 в 11:15
                     </p>
                 </div>
             </div>
         </div>
     </footer>
+    <button id="backToTop" class="back-to-top" title="Нагору">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
 </body>
-
 </html>
-
-

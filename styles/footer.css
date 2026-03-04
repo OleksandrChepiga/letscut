@@ -1,16 +1,16 @@
 /* Основний контейнер футера */
 .footer-box {
-    background-color: #ffffff;
-    padding: 50px 0;
+    background-color: #007bff;
+    padding: 30px 0;
     width: 100%;
+    box-shadow: 10px 0 25px #00000033;
 }
 /* Внутрішній обмежувач ширини, щоб контент не розповзався на надшироких моніторах */
 .footer-container {
-    background-color: #ffffff;
+    background-color: #007bff;
     max-width: 1600px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0 60px;
 }
@@ -22,34 +22,30 @@
 }
 /* Стилі для тексту праворуц */
 .footer-right {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'SegoeUI', sans-serif;
     font-size: 16px; /* 32px може бути завеликим для футера, спробуй 24px */
     font-weight: 500;
-    color: #333;
-    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
 }
 .footer-name  {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'SegoeUI', sans-serif;
     font-size: 20px; /* 32px може бути завеликим для футера, спробуй 24px */
     font-weight: 500;
-    color: #333;
+    color: #ffffff;
 }
 .footer-name a {
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
     transition: 0.15s;
-}
-.footer-name a:hover {
-    color: #0066ff;
 }
 .footer-text {
     margin-top: 25px;
-    font-family: 'Manrope';
+    font-family: 'SegoeUI', sans-serif;
     font-size: 14px;
     line-height: 7px;
 }
 .footer-text p {
-    display: flex;         /* Вмикаємо гнучкий контейнер для рядка */
     align-items: center;    /* Вирівнює іконку та текст по центру по вертикалі */
     gap: 8px;              /* Відступ між іконкою та текстом */
     margin: 5px 0;         /* Відступи між абзацами */
@@ -64,12 +60,8 @@
 /* Додай відступ після ком, щоб посилання мали пробіли */
 .footer-text a {
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
     transition: 0.15s;
-}
-
-.footer-text a:hover {
-    color: #0066ff;
 }
 
 /* Адаптивність для мобільних пристроїв */

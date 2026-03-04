@@ -80,3 +80,51 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const faqItem = this.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+
+            // Закриваємо інші відкриті блоки (акордеон)
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-answer').style.maxHeight = '0';
+                }
+            });
+
+            // Перемикаємо стан поточного блоку
+            faqItem.classList.toggle('active');
+
+            if (faqItem.classList.contains('active')) {
+                // Встановлюємо точну висоту контенту для плавної анімації
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            } else {
+                // Повертаємо в нуль
+                answer.style.maxHeight = '0';
+            }
+        });
+    });
+});
+
+const backToTopBtn = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    // Якщо прокрутили більше ніж на 300px — показуємо кнопку
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    // Плавне повернення до блоку #hero
+    document.getElementById('hero').scrollIntoView({
+        behavior: 'smooth'
+    });
+});
