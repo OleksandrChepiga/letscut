@@ -128,3 +128,74 @@ backToTopBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+// 1. Ініціалізація (обов'язково на самому початку)
+(function() {
+    emailjs.init("cIo6JxlEn9768loOM");
+})();
+
+document.addEventListener('DOMContentLoaded', function() {
+    const selectWrapper = document.getElementById('serviceSelect');
+    const trigger = selectWrapper.querySelector('.custom-select-trigger');
+    const options = selectWrapper.querySelectorAll('.custom-option');
+    const hiddenInput = document.getElementById('serviceInput');
+    const triggerText = trigger.querySelector('span');
+    const form = document.getElementById('order-form');
+
+    // Відкриття/Закриття
+    trigger.addEventListener('click', function() {
+        selectWrapper.classList.toggle('open');
+    });
+
+    // Вибір опції
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            const val = this.getAttribute('data-value');
+            if(val !== "") {
+                triggerText.innerText = this.innerText;
+                hiddenInput.value = val;
+                options.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+            }
+            selectWrapper.classList.remove('open');
+        });
+    });
+
+    // Закриття при кліку зовні
+    window.addEventListener('click', function(e) {
+        if (!selectWrapper.contains(e.target)) {
+            selectWrapper.classList.remove('open');
+        }
+    });
+
+    // Відправка форми через EmailJS
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Перевірка на обраний тариф
+        if (!hiddenInput.value) {
+            alert('Будь ласка, оберіть тариф!');
+            return;
+        }
+
+        const btn = document.getElementById('submit-btn');
+        const originalText = btn.textContent;
+
+        btn.textContent = 'Відправка...';
+        btn.disabled = true;
+
+        emailjs.sendForm('service_4htf3z6', 'template_ffoio0q', this)
+            .then(function() {
+                alert('Дякую! Ваша заявка отримана.');
+                btn.textContent = originalText;
+                btn.disabled = false;
+                form.reset();
+                triggerText.innerText = 'Оберіть тариф...';
+                hiddenInput.value = '';
+            }, function(error) {
+                alert('Помилка: ' + JSON.stringify(error));
+                btn.textContent = originalText;
+                btn.disabled = false;
+            });
+    });
+});

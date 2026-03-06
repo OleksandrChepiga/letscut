@@ -19,10 +19,12 @@
     <link rel="stylesheet" href="styles/work-schedule.css">
     <link rel="stylesheet" href="styles/autor.css">
     <link rel="stylesheet" href="styles/faq.css">
+    <link rel="stylesheet" href="styles/form.css">
     <link rel="stylesheet" href="styles/contacts.css">
     <link rel="icon" type="image/png" href="logo.png">
     <script src="styles/burger-nav-scripts.js" defer></script>
     <script src="styles/scripts.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <div class="page-transition"></div>
@@ -41,6 +43,7 @@
             <a href="#tariffs">Тарифи</a>
             <a href="#faq">F.A.Q</a>
             <a href="#contacts">Контакти</a>
+            <a href="#order">Замовлення</a>
         </nav>
     </div>
 
@@ -186,7 +189,7 @@
                     <div class="tariff-header">
                         <h3>Shorts</h3>
                         <p class="tariff-desc">Вертикальний формат, для TikTok, Instagram Reels, Youtube Shorts</p>
-                        <div class="price"><span>Від</span> 180 грн<span>/хв</span></div>
+                        <div class="price"><span>Від</span> 150 грн<span>/хв</span></div>
                     </div>
                     <ul class="tariff-features">
                         <li>Тривалість відео не більше 1 хв</li>
@@ -201,7 +204,7 @@
                     <div class="tariff-header">
                         <h3>Video</h3>
                         <p class="tariff-desc">Горизонтальний формат, для Youtube, особистого архіву</p>
-                        <div class="price"><span>Від</span> 260 грн<span>/хв</span></div>
+                        <div class="price"><span>Від</span> 240 грн<span>/хв</span></div>
                     </div>
                     <ul class="tariff-features">
                         <li>Тривалість відео не більше 5 хв</li>
@@ -355,6 +358,88 @@
         </div>
     </section>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <section id="order" class="form-section">
+        <h2 class="section-title">Замовити монтаж</h2>
+        <p class="subtitle">Заповніть форму, і я отримаю ваше замовлення на робочу пошту</p>
+    
+        <div class="form-container">
+            <form id="order-form" class="order-form-content" autocomplete="on">
+                
+                <div class="form-group">
+                    <label for="pib">ПІБ*</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-user" title="Як до вас звертатися?"></i>
+                        <input type="text" name="name" id="pib" placeholder="Ваше прізвище, ім'я, по-батькові" autocomplete="name" required>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="phone">Номер телефону*</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="tel" name="phone" id="phone" placeholder="+380..." autocomplete="tel" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" name="email" id="email" placeholder="example@gmail.com" autocomplete="email" required>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label>Оберіть тариф*</label>
+                    <div class="custom-select-wrapper" id="serviceSelect">
+                        <div class="custom-select-trigger">
+                            <i class="fa-solid fa-list-ul"></i>
+                            <span>Оберіть тариф...</span>
+                            <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 10L12 15L17 10" stroke="#2f55d4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="custom-options">
+                            <span class="custom-option selected" data-value="">Оберіть тариф...</span>
+                            <span class="custom-option" data-value="Shorts">Тариф Shorts (від 180 грн/хв)</span>
+                            <span class="custom-option" data-value="Video">Тариф Video (від 260 грн/хв)</span>
+                            <span class="custom-option" data-value="Custom">Тариф Custom (Договірна)</span>
+                        </div>
+                        <input type="hidden" name="tariff" id="serviceInput" required>
+                    </div>
+                </div>
+    
+                <div class="form-group full-width">
+                    <label for="link">Посилання на матеріали*</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-link" title="Посилання на хмару (Диск, fex.net)"></i>
+                        <input 
+                            type="url" 
+                            name="link" 
+                            id="link" 
+                            placeholder="https://drive.google.com/..." 
+                            autocomplete="url" 
+                            pattern="https://.*" 
+                            title="Посилання має починатися з https://" 
+                            required>
+                    </div>
+                </div>
+    
+                <div class="form-group full-width">
+                    <label for="message">Ваше повідомлення*</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-comment" title="Ваші побажання"></i>
+                        <textarea name="message" id="message" placeholder="Деталі замовлення (тривалість, побажання)..." required></textarea>
+                    </div>
+                </div>
+    
+                <button type="submit" id="submit-btn" class="form-submit-btn">Надіслати замовлення</button>
+            </form>
+        </div>
+    </section>
+
     <footer class="footer-box">
         <div class="footer-container">
             
@@ -385,7 +470,5 @@
 </body>
 
 </html>
-
-
 
 

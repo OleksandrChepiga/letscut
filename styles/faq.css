@@ -6,7 +6,6 @@
     text-align: center;
     scroll-margin-top: 90px;
 }
-
 .faq-item {
     background: #fff;
     border: 1px solid #eee;
@@ -18,7 +17,6 @@
     transition: background-color 0.3s;
     border-top: 3px solid #0066ff;
 }
-
 .faq-question {
     width: 100%;
     padding: 20px 25px;
@@ -39,28 +37,23 @@
 .faq-question:hover {
     background-color: #eee;
 }
-
 .faq-arrow {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .faq-item.active .faq-arrow {
     transform: rotate(180deg);
 }
-
 /* Контейнер анімації */
 .faq-answer {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-in-out; /* Рівномірна швидкість */
 }
-
 /* Контейнер з контентом - ПАДІНГИ ТУТ */
 .faq-answer-content {
     padding: 0 25px 25px 25px;
     border-top: 1px solid #eee;
 }
-
 .faq-answer p {
     margin-top: 15px;
     color: #666;
@@ -69,6 +62,9 @@
     line-height: 1.7;
     text-align: left;
 }
+
+
+
 @media (max-width: 768px) {
     .faq-section {
         margin-top: 20px; /* Зменшили зі 100px */
