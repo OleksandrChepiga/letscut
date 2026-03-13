@@ -1,4 +1,4 @@
-const SERVER_URL = "https://letscut.onrender.com"; // Перевір, щоб це було посилання з твого Render
+const SERVER_URL = "https://letscut-ur97.onrender.com"; // Перевір, щоб це було посилання з твого Render
 
 function generateOrderID() {
     const now = new Date();
