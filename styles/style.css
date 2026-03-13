@@ -1,0 +1,153 @@
+:root {
+    /* font-family */
+    --font-family-title: 'Montserrat', sans-serif;
+    --font-family-desc: 'SegoeUI', sans-serif;
+
+    /* Відступи */
+    --padding-inline-section: 48px;
+    --padding-block-section: 48px; /* Трохи збільшив для кращого дихання секцій */
+    --margin-bottom-title: 10px;
+    --margin-bottom-desc: 50px;  
+    --margin-inline-items: 12px;
+    --margin-block-items: 12px;
+    
+    /* text-color */
+    --color-title: #222222;
+    --color-desc: #5e5e5e;
+    --color-link: #414141;
+
+    /* font-size */    
+    --font-size-title: 28px;
+    --font-size-desc: 15px; /* Підправив до 15px, 13px зазвичай замало для читання */
+
+    /* font-weight */
+    --font-weight-button: 600;
+    --font-weight-title: 600;
+    --font-weight-desc: 400;
+
+    /* Для карток */
+    --card-radius: 15px;         
+    --card-shadow: 0 0 7px #00000038;
+    --card-shadow-hover: 0 0 15px #00000050;
+
+    /* background */
+    --bg-body: #f7f7f7;
+    --bg-card-color: #ffffff;
+    --bg-button-action: #000000;
+    --bg-button-universal: #0066ff;
+    --bg-button-cancel: #e00303;
+}
+
+/* 1. Додаємо обов'язково, щоб padding не роздував ширину блоків */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    background-color: var(--bg-body);
+    margin: 0;
+    font-family: var(--font-family-desc);
+    color: var(--color-desc);
+    user-select: auto;
+}
+
+body.loaded {
+    opacity: 1;
+}
+section {
+    max-width: 1200px;
+}
+
+#hero, #about, #schedule, #works, #faq, #tariffs, #contacts, #order {
+    scroll-margin-top: 30px; 
+}
+
+/* 3. Уніфіковані заголовки */
+.section-title {
+    font-family: var(--font-family-title);
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-title); 
+    color: var(--color-title);
+    text-align: center;
+    margin-bottom: var(--margin-bottom-title);
+}
+
+.subtitle {
+    font-family: var(--font-family-desc);
+    font-size: var(--font-size-desc);
+    font-weight: var(--font-weight-desc);
+    color: var(--color-desc);
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--margin-bottom-desc);
+}
+
+/* Плавний вхід сторінки */
+.page-transition {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #ffffff;
+    z-index: 9999;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s;
+}
+
+body.loaded .page-transition {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Кнопка вгору */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--bg-button-universal);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    :root {
+        --padding-inline-section: 20px;
+        --padding-block-section: 50px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        padding-inline: 10px;
+    }
+
+    .weekly-calendar, .tariffs-grid, .faq-container, .contacts-grid {
+        margin-top: 25px;
+    }
+}

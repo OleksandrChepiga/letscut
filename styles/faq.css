@@ -1,0 +1,94 @@
+/* FAQ Section Styles */
+.faq-section {
+    padding-inline: var(--padding-inline-section);
+    padding-block: var(--padding-block-section);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq-item {
+    background: var(--bg-card-color);
+    border: 2px solid #eee;
+    border-radius: var(--card-radius);
+    margin-bottom: 15px;
+    box-shadow: 0 0 2.5px #00000046;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.faq-item:hover {
+    border: 2px solid #007bff;
+}
+
+
+.faq-question {
+    width: 100%;
+    padding: 20px 25px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    font-weight: var(--font-weight-button);
+    font-family: var(--font-family-title);
+    color: var(--color-title);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #eeeeee;
+}
+
+.faq-arrow {
+    font-size: 28px;
+    color: var(--bg-button-action);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-item.active .faq-arrow {
+    transform: rotate(180deg);
+}
+
+/* Контейнер анімації */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+/* Внутрішній контент */
+.faq-answer-content {
+    padding: 0 25px 5px 25px;
+    border-top: 2px solid #eeeeee;
+}
+
+.faq-answer p {
+    margin-top: 15px;
+    color: var(--color-desc);
+    font-family: var(--font-family-desc);
+    font-size: 15px;
+    line-height: 1.7;
+    text-align: left;
+}
+
+/* Прибираємо верхній відступ у першого абзацу, щоб не було "дірки" */
+.faq-answer-content p:first-child {
+    margin-top: 15px;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .faq-section {
+        padding-inline: 15px;
+        padding-block: 30px;
+    }
+    
+    .faq-question {
+        padding: 15px 20px;
+        font-size: 15px;
+    }
+}

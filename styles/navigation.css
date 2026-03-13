@@ -1,0 +1,122 @@
+/* Базові стилі ПК */
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background-color: #004bff;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    box-shadow: 0 10px 15px #00000033;
+}
+
+nav {
+    display: flex;
+    gap: 30px; 
+    align-items: center;
+    height: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-family: var(--font-family-title);
+    font-size: 16px;
+    font-weight: 450;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.burger-menu span {
+    width: 28px;
+    height: 3px;
+    background-color: #007bff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* --- МОБІЛЬНА ВЕРСІЯ (Виправлена підкладка) --- */
+@media (max-width: 768px) {
+    .navigation {
+        background-color: transparent; /* Прибираємо білу смугу зверху */
+        backdrop-filter: none;
+        justify-content: flex-end; /* Бургер праворуч */
+        height: 60px;
+        box-shadow: 0 0 0 #ffffff00;
+    }
+
+    .burger-menu {
+        display: flex;
+        margin-right: 10px;
+    }
+
+    /* Анімація хрестика */
+    .burger-menu.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .burger-menu.open span:nth-child(2) { opacity: 0; }
+    .burger-menu.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    nav {
+        display: none; /* Сховано за замовчуванням */
+        position: absolute;
+        top: 55px; /* Прямо під бургер-кнопкою */
+        right: 20px;
+        
+        /* Виправлення підкладки */
+        background-color: white !important;
+        height: auto !important; /* Розтягується по контенту */
+        width: max-content; /* Ширина по тексту */
+        min-width: 130px;
+        
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px; /* Рівномірні відступи */
+        gap: 12px;
+        
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        z-index: 1050;
+        box-sizing: border-box;
+    }
+
+    nav.active {
+        display: flex; /* Показуємо весь блок при кліку */
+    }
+
+    nav a {
+        height: auto !important; /* Скидаємо висоту 100% з ПК версії */
+        width: 100%;
+        font-size: 16px;
+        color: #444;
+        padding: 4px 0;
+        justify-content: flex-start;
+    }
+
+    /* Вимикаємо синю лінію на мобілках */
+    nav a::after {
+        display: none !important;
+    }
+
+    /* Тільки зміна кольору тексту при натисканні */
+    nav a:active, nav a:hover {
+        color: #0066ff;
+        background: none;
+    }
+}
