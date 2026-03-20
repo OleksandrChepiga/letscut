@@ -36,8 +36,8 @@
 }
 
 .autor-text {
-    font-family: var(--font-family-desc);
-    font-size: 17px;
+    font-family: var(--body-font);
+    font-size: 16px;
     line-height: 1.6;
     font-weight: 400;
     color: var(--color-title);
@@ -47,7 +47,7 @@
 .autor-text a, 
 .site-name a {
     text-decoration: none;
-    color: var(--bg-button-universal);
+    color: var(--universal-hover);
     font-weight: 600;
 }
 

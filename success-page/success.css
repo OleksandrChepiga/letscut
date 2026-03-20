@@ -29,35 +29,46 @@ body {
     display: block;
 }
 
-h1 { 
-    font-size: 24px; 
+h1 {
+    font-family: var(--heading-font); 
+    font-size: 26px; 
     color: #383838; /* Колір з твоєї змінної --font-color */
     margin-bottom: 15px; 
     line-height: 1.2;
 }
 
 p { 
+    font-family: var(--body-font);
     font-size: 16px; 
     color: #555; 
+    font-weight: 400;
     margin-bottom: 30px; 
     line-height: 1.5; 
 }
 
+p strong { 
+    font-family: var(--heading-font);
+    font-size: 16px; 
+    color: #004bff; 
+    font-weight: 700;
+}
+
 .email-info {
+    font-family: var(--nav-font);
     font-size: 0.9em; 
     color: #777; 
-    margin-top: 20px;
+    margin-top: -20px;
 }
 
 /* КНОПКА - ТЕПЕР ОДИН В ОДИН ЯК НА ФОРМІ */
 .btn-home {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--heading-font);
     font-size: 16px;
     font-weight: 600;
     color: #fff;
-    background: #000;
-    border: 2px solid #000;
-    border-radius: 12px;
+    background: #004bff;
+    border: 2px solid #004bff;
+    border-radius: 15px;
     
     /* Точне припасування */
     padding: 0 35px; /* Прибираємо вертикальний padding, замінимо його висотою */
@@ -72,7 +83,13 @@ p {
 
 .btn-home:hover {
     background: transparent;
-    color: #000;
+    color: #004bff;
+}
+
+.success-logo {
+    width: 150px;
+    height: 150px;
+    
 }
 
 /* Мобільна адаптація */

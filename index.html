@@ -7,9 +7,11 @@
     <meta name="format-detection" content="telephone=no">
     <title>Відеомонтаж від сервісу let's cut</title>
     <meta name="description" content="Якісний відеомонтаж від let's cut (Олександра Чепіги). Створення відео для соцмереж (Shorts, Reels), сімейних архівів та реклами. Швидко, якісно та доступно по всій Україні.">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@100;200;300;400;600;700;800&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/navigation.css">
     <link rel="stylesheet" href="styles/main.css">
@@ -19,9 +21,7 @@
     <link rel="stylesheet" href="styles/work-schedule.css">
     <link rel="stylesheet" href="styles/autor.css">
     <link rel="stylesheet" href="styles/faq.css">
-    <link rel="stylesheet" href="styles/form.css">
     <link rel="stylesheet" href="styles/contacts.css">
-    <link rel="stylesheet" href="styles/order_script.js">
     <link rel="stylesheet" href="styles/order.css">
 
     
@@ -35,6 +35,11 @@
 <body>
     <div class="page-transition"></div>
     <div class="navigation">
+        <a href="#hero" class="nav-logo">
+            <img src="logo.png" alt="Logo">
+            <span class="logo-text">letscut.com.ua</span>
+        </a>
+    
         <div class="burger-menu" id="burger-btn">
             <span></span>
             <span></span>
@@ -61,7 +66,8 @@
             </div>
             
             <div class="main-content">
-                <h1>Відеомонтаж по всій Україні</h1>
+                <h1>Let's Cut<h1>
+                <p>Сервіс якісного й доступного відеомонтажу по всій Україні</p>
             </div>
         </div>
     </main>
@@ -75,7 +81,7 @@
         <div class="autor-flex-container"> 
             <div class="autor-card">
                 <div class="autor-text">
-                    <p>Мене звати Олександр Васильович Чепіга, мені 15 і я засновник та провідний спеціаліст сервісу <span><a href="hero" class="site-name">let's cut</a></span>. Працюючи по всій Україні, я допомагаю перетворювати ваші розрізнені відеофайли на цілісні історії, які хочеться переглядати знову і знову.</p>
+                    <p>Мене звати Олександр Васильович Чепіга, мені 15 і я засновник та провідний спеціаліст сервісу <span><a href="hero" class="site-name">Let's Cut</a></span>. Працюючи по всій Україні, я допомагаю перетворювати ваші розрізнені відеофайли на цілісні історії, які хочеться переглядати знову і знову.</p>
                     <p>Спеціалізуюся на монтажі сімейних та шкільних архівів, а також створюю невеликі рекламні ролики для колективів чи бізнесу. У роботі використовую CapCut, де досконало освоїв усі професійні налаштування, щоб ваші відео виглядали сучасно та динамічно.</p>
                     <p>Я проживаю поруч із містом Ічня на Чернігівщині, але працюю дистанційно. Якщо вам потрібен надійний монтаж або є ділові питання — пишіть мені в <span><a href="https://t.me/Oleksandr_Chepiha">Telegram</a></span> або <span><a href="https://www.facebook.com/share/18JZbQisNv/?mibextid=wwXIfr">Facebook</a></span>, я завжди на зв'язку!</p>
                 </div>
@@ -90,8 +96,7 @@
 
     <section id="schedule" class="schedule-section">
         <h3 class="section-title">Графік роботи</h3>
-        <p class="subtitle">Плануйте замовлення заздалегідь. У вихідні я займаюся монтажем поточних
-            <br>проєктів, тому нові замовлення обробляються лише у робочі дні</p>
+        <p class="subtitle">Плануйте замовлення заздалегідь. У вихідні я займаюся монтажем поточних проєктів, тому нові замовлення обробляються лише у робочі дні</p>
         
         <div class="weekly-calendar">
             <div class="calendar-item work">
@@ -149,14 +154,16 @@
                     </div>
                 </div>
                 <div class="portfolio-info">
-                    <h3>Відеореклама для ЗСУ</h3>
-                    <p>Тариф Video <span>(320₴)</span></p>
+                    <h3>Назва твого відео</h3>
+                    <div class="portfolio-meta">
+                        <span class="work-tariff">Тариф Video</span>
+                    </div>
                 </div>
             </a>
     
             <a href="https://www.youtube.com/watch?v=mfEybFeogGU" target="_blank" class="portfolio-item">
                 <div class="portfolio-image">
-                    <img src="https://img.youtube.com/vi/mfEybFeogGU/maxresdefault.jpg" alt="Відеоролик закладу ВІТІ">
+                    <img src="https://img.youtube.com/vi/mfEybFeogGU/maxresdefault.jpg" alt="Відео відсутнє">
                     <div class="play-overlay">
                         <div class="play-icon">
                             <img src="icons/play.svg" alt="Play">
@@ -164,8 +171,10 @@
                     </div>
                 </div>
                 <div class="portfolio-info">
-                    <h3>Відеореклама закладу ВІТІ</h3>
-                    <p>Тариф Video (260₴)</p>
+                    <h3>Реклама закладу ВІТІ</h3>
+                    <div class="portfolio-meta">
+                        <span class="work-tariff">Тариф Video</span>
+                    </div>
                 </div>
             </a>
             
@@ -180,22 +189,9 @@
                 </div>
                 <div class="portfolio-info">
                     <h3>Огляд iPhone 12</h3>
-                    <p>Тариф Shorts <span>(280₴)</span></p>
-                </div>
-            </a>
-
-            <a href="https://www.youtube.com/shorts/D3_-TmDfQ5c" target="_blank" class="portfolio-item">
-                <div class="portfolio-image">
-                    <img src="https://img.youtube.com/vi/D3_-TmDfQ5c/maxresdefault.jpg" alt="Про iPhone 13 Pro">
-                    <div class="play-overlay">
-                        <div class="play-icon">
-                            <img src="icons/play.svg" alt="Play">
-                        </div>
+                    <div class="portfolio-meta">
+                        <span class="work-tariff">Тариф Shorts</span>
                     </div>
-                </div>
-                <div class="portfolio-info">
-                    <h3>Про iPhone 13 Pro</h3>
-                    <p>Тариф Custom (560₴)</p>
                 </div>
             </a>
     
@@ -212,8 +208,8 @@
                 <div class="tariff-card">
                     <div class="tariff-header">
                         <h3>Shorts</h3>
-                        <p class="tariff-desc">Вертикальний формат, для TikTok, Instagram Reels, Youtube Shorts</p>
-                        <div class="price"><span>Від</span> 180 грн<span>/хв</span></div>
+                        <p class="tariff-desc">Відео у вертикальному форматі для TikTok, Reels, Shorts</p>
+                        <div class="price"><span>Від</span> 180 ₴<span>/хв</span></div>
                     </div>
                     <ul class="tariff-features">
                         <li>Тривалість відео не більше 1 хв</li>
@@ -227,13 +223,13 @@
                 <div class="tariff-card">
                     <div class="tariff-header">
                         <h3>Video</h3>
-                        <p class="tariff-desc">Горизонтальний формат, для Youtube, особистого архіву</p>
-                        <div class="price"><span>Від</span> 260 грн<span>/хв</span></div>
+                        <p class="tariff-desc">Відео у горизонтальному форматі для Youtube, особистого архіву</p>
+                        <div class="price"><span>Від</span> 260 ₴<span>/хв</span></div>
                     </div>
                     <ul class="tariff-features">
                         <li>Тривалість відео не більше 5 хв</li>
                         <li>Додавання фільтрів та ефектів</li>
-                        <li>Складні переходи та анімації</li>
+                        <li>Звичайні переходи та анімації</li>
                         <li>До 3 виправлень</li>
                     </ul>
                     <a href="/order?tariff=Video" class="tariff-btn">Замовити</a>
@@ -241,17 +237,17 @@
     
                 <div class="tariff-card">
                     <div class="tariff-header">
-                        <h3>Custom</h3>
-                        <p class="tariff-desc">Повна персоналізація, будь-який формат</p>
+                        <h3>Unique</h3>
+                        <p class="tariff-desc">Відео у будь-якому форматі, повна персоналізація ідей</p>
                         <div class="price">Договірна</div>
                     </div>
                     <ul class="tariff-features">
                         <li>Тривалість відео необмежена</li>
-                        <li>Складна графіка та ефекти</li>
+                        <li>Складні ефекти та переходи</li>
                         <li>Звуковий дизайн (SFX)</li>
                         <li>До 7 виправлень</li>
                     </ul>
-                    <a href="/order?tariff=Custom" class="tariff-btn">Замовити</a>
+                    <a href="/order?tariff=Unique" class="tariff-btn">Замовити</a>
                 </div>
             </div>
         </div>
@@ -265,8 +261,8 @@
             <div class="faq-item">
                 <button class="faq-question">
                     Які терміни виконання монтажу?
-                    <svg class="faq-arrow" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 10L12 15L17 10" stroke="#004bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
                 <div class="faq-answer">
@@ -279,8 +275,8 @@
             <div class="faq-item">
                 <button class="faq-question">
                     Як я можу передати великі відеофайли?
-                    <svg class="faq-arrow" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 10L12 15L17 10" stroke="#004bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
                 <div class="faq-answer">
@@ -293,8 +289,8 @@
             <div class="faq-item">
                 <button class="faq-question">
                     Чи можна внести зміни у готове відео?
-                    <svg class="faq-arrow" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 10L12 15L17 10" stroke="#004bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
                 <div class="faq-answer">
@@ -307,8 +303,8 @@
             <div class="faq-item">
                 <button class="faq-question">
                     Як оплачується виконане замовлення?
-                    <svg class="faq-arrow" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 10L12 15L17 10" stroke="#004bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
                 <div class="faq-answer">
@@ -321,8 +317,8 @@
             <div class="faq-item">
                 <button class="faq-question">
                     Чи можуть бути затримки із виконанням замовлення?
-                    <svg class="faq-arrow" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 10L12 15L17 10" stroke="#004bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
                 <div class="faq-answer">
@@ -346,7 +342,7 @@
                 
                 <div class="contact-card">
                     <div class="contact-icon">
-                        <img src="icons/tg.svg" alt="Telegram">
+                        <img src="icons/telegram.svg" alt="Telegram">
                     </div>
                     <h3>Telegram</h3>
                     <p><a href="https://t.me/Oleksandr_Chepiha" target="_blank">@Oleksandr_Chepiha</a></p>
@@ -354,7 +350,7 @@
     
                 <div class="contact-card">
                     <div class="contact-icon">
-                        <img src="icons/fb.svg" alt="Facebook">
+                        <img src="icons/facebook.svg" alt="Facebook">
                     </div>
                     <h3>Facebook</h3>
                     <p><a href="https://www.fb.com/share/18JZbQisNv/" target="_blank">Олександр Чепіга</a></p>
@@ -362,7 +358,7 @@
     
                 <div class="contact-card">
                     <div class="contact-icon">
-                        <img src="icons/gm.svg" alt="Email">
+                        <img src="icons/email.svg" alt="Email">
                     </div>
                     <h3>Email</h3>
                     <p><a href="mailto:letscut.ua@gmail.com">letscut.ua@gmail.com</a></p>
@@ -378,7 +374,7 @@
         <div class="footer-container">
             
             <div class="footer-right">
-                <span class="footer-name"><a href="#hero">©2026 let's cut - Всі права захищені</a></span>
+                <span class="footer-name"><a href="#hero">©2026 Let's Cut - Всі права захищені</a></span>
                 <div class="footer-text">
                     <p>
                         Сайт був створений і належить Чепізі Олександру Васильовичу
@@ -390,7 +386,7 @@
                         </span>
                     </p>
                     <p>
-                        Версія сайту: v1.0.1 (13.03.2026 18:30)
+                        Версія сайту: v1.0.2 (20.03.2026 20:26)
                     </p>
                 </div>
             </div>
@@ -404,14 +400,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-

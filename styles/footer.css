@@ -7,7 +7,6 @@
 }
 /* Внутрішній обмежувач ширини, щоб контент не розповзався на надшироких моніторах */
 .footer-container {
-    background-color: #004bff;
     max-width: 1600px;
     margin: 0 auto;
     justify-content: center;
@@ -22,15 +21,15 @@
 }
 /* Стилі для тексту праворуц */
 .footer-right {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--heading-font);
     font-size: 16px; /* 32px може бути завеликим для футера, спробуй 24px */
-    font-weight: 500;
+    font-weight: 800;
     color: #ffffff;
     text-align: center;
 }
 .footer-name  {
-    font-family: var(--font-family-title);
-    font-size: 20px; /* 32px може бути завеликим для футера, спробуй 24px */
+    font-family: var(--heading-font);
+    font-size: 22px; /* 32px може бути завеликим для футера, спробуй 24px */
     font-weight: 500;
     color: #ffffff;
 }
@@ -41,8 +40,8 @@
 }
 .footer-text {
     margin-top: 25px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
+    font-family: var(--body-font);
+    font-weight: 300;
     font-size: 13px;
     line-height: 7px;
 }

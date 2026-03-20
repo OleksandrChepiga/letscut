@@ -10,9 +10,11 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@100;200;300;400;600;700;800&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/navigation.css">
     <link rel="stylesheet" href="styles/main.css">
@@ -22,7 +24,6 @@
     <link rel="stylesheet" href="styles/work-schedule.css">
     <link rel="stylesheet" href="styles/autor.css">
     <link rel="stylesheet" href="styles/faq.css">
-    <link rel="stylesheet" href="styles/form.css">
     <link rel="stylesheet" href="styles/contacts.css">
     <link rel="stylesheet" href="styles/order.css">
 
@@ -96,13 +97,20 @@
                     <h3><i class="fa-solid fa-sliders"></i> Деталі проєкту</h3>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label class="field-label">Тариф</label>
-                            <select id="tariff-select" name="tariff" required>
-                                <option value="" disabled selected>Оберіть тариф*</option>
-                                <option value="Shorts">Shorts (Вертикальне)</option>
-                                <option value="Video">Video (Горизонтальне)</option>
-                                <option value="Custom">Custom (Індивідуальне)</option>
-                            </select>
+                            <label class="field-label">Ваш тариф:</label>
+                            <input type="text" id="tariff-display" readonly tabindex="-1" style="
+                                font-family: var(--heading-font);
+                                font-size: 16px; /* Трохи менше, щоб влізло в стандартний input */
+                                padding: 12px; 
+                                 border: 1px solid #ececec; 
+                                border-radius: 8px; 
+                                font-weight: 600; 
+                                color: var(--universal-hover);
+                                background-color: #f9f9f9; /* Світло-сірий фон підкреслить, що поле заблоковане */
+                                cursor: default;
+                            ">
+                            
+                            <input type="hidden" id="tariff-select" name="tariff">
                         </div>
                         <div class="form-group">
                             <label class="field-label">Терміновість</label>
@@ -125,23 +133,7 @@
                         <input type="url" id="link" name="link" placeholder="https://drive.google.com/..." required autocomplete="url">
                     </div>
                 </div>
-
-                <div class="form-group full-width copyright-box">
-                    <div class="checkbox-container">
-                        <input type="checkbox" name="copyright_transfer" id="copyright-check">
-                        
-                        <span class="checkmark"></span>
-                        
-                        <div class="checkbox-text">
-                            <p class="checkbox-header">
-                                Передача авторських прав (+5%)
-                                <span class="tooltip-icon" data-tooltip="Ви отримуєте право використовувати відео в офіційній рекламі без згадки автора.">
-                                </span>
-                            </p>
-                            <p class="checkbox-desc">Якщо цей проєкт призначений для офіційної реклами або комерційного використання, вам необхідно отримати повні авторські права. Це підтверджує, що контентмейкер не має до вас жодних претензій щодо подальшого використання відео.</p>
-                        </div>
-                    </div>
-                </div>
+                
 
                 <div class="form-section-box">
                     <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Творчі побажання</h3>
@@ -155,6 +147,23 @@
                     </div>
                 </div>
 
+                <div class="form-group full-width copyright-box">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="copyright_transfer" id="copyright-check">
+                        
+                        <span class="checkmark"></span>
+                        
+                        <div class="checkbox-text">
+                            <h1 class="checkbox-header">
+                                Передача авторських прав (+5%)
+                                <span class="tooltip-icon" data-tooltip="Ви отримуєте право використовувати відео в офіційній рекламі без згадки автора.">
+                                </span>
+                            </h1>
+                            <p class="checkbox-desc">Якщо цей проєкт призначений для офіційної реклами або комерційного використання, вам необхідно отримати повні авторські права. Це підтверджує, що контентмейкер не має до вас жодних претензій щодо подальшого використання відео.</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-footer">
                     <a href="/" class="cancel-btn">Скасувати</a>
                     <button type="submit" id="send-btn" class="submit-btn">
@@ -164,6 +173,8 @@
             </form>
         </main>
     </div>
+
+    
 
     <button id="backToTop" class="back-to-top" title="Нагору">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

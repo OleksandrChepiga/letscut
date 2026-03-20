@@ -30,56 +30,6 @@ document.querySelectorAll('nav a').forEach(link => {
     });
 });
 
-// --- 2. Логіка активних пунктів меню та Модального вікна ---
-document.addEventListener("DOMContentLoaded", function() {
-    
-    // Активне посилання в меню
-    const currentPath = window.location.pathname.split("/").pop();
-    const navLinks = document.querySelectorAll('nav a');
-
-    navLinks.forEach(link => {
-        const linkPath = link.getAttribute('href');
-        if (currentPath === linkPath || (currentPath === "" && linkPath === "index.html")) {
-            link.classList.add('active');
-        }
-    });
-
-    // МОДАЛЬНЕ ВІКНО
-    const modal = document.getElementById("orderModal");
-    const openBtns = document.querySelectorAll(".open-modal");
-    const closeBtn = document.querySelector(".modal-close");
-
-    if (!modal) return; // Запобіжник, якщо на сторінці немає модалки
-
-    function openModal(e) {
-        if (e) e.preventDefault();
-        modal.classList.add("active");
-        document.body.style.overflow = "hidden"; 
-    }
-
-    function closeModal() {
-        modal.classList.remove("active");
-        document.body.style.overflow = ""; 
-    }
-
-    // Відкриття при кліку на будь-яку кнопку "Замовити"
-    openBtns.forEach(btn => btn.addEventListener("click", openModal));
-
-    // Закриття на хрестик
-    if (closeBtn) closeBtn.addEventListener("click", closeModal);
-
-    // Закриття при кліку на фон (оверлей)
-    modal.addEventListener("click", (e) => {
-        if (e.target === modal) closeModal();
-    });
-
-    // Закриття при натисканні Escape
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modal.classList.contains("active")) {
-            closeModal();
-        }
-    });
-});
 
 // --- 3. Акордеон FAQ ---
 document.addEventListener('DOMContentLoaded', () => {
@@ -89,12 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
         question.addEventListener('click', function() {
             const faqItem = this.parentElement;
             const answer = faqItem.querySelector('.faq-answer');
+            const isActive = faqItem.classList.contains('active');
 
             // Закриваємо інші відкриті блоки (акордеон)
             document.querySelectorAll('.faq-item').forEach(item => {
                 if (item !== faqItem && item.classList.contains('active')) {
                     item.classList.remove('active');
-                    item.querySelector('.faq-answer').style.maxHeight = '0';
+                    const otherAnswer = item.querySelector('.faq-answer');
+                    otherAnswer.style.maxHeight = null; // Використовуємо null замість '0' для чистоти стилів
                 }
             });
 
@@ -102,9 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
             faqItem.classList.toggle('active');
 
             if (faqItem.classList.contains('active')) {
+                // Використовуємо scrollHeight для точного визначення висоти
                 answer.style.maxHeight = answer.scrollHeight + "px";
             } else {
-                answer.style.maxHeight = '0';
+                answer.style.maxHeight = null;
             }
         });
     });
@@ -131,3 +84,31 @@ if (backToTopBtn) {
         }
     });
 }
+
+
+
+/*Активний розділ*/
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section, main > div[id]');
+    const navLinks = document.querySelectorAll('nav a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            // Перевіряємо, чи знаходиться скрол в межах секції (з невеликим відступом 70px)
+            if (pageYOffset >= (sectionTop - 70)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(a => {
+            a.classList.remove('active-link');
+            if (a.getAttribute('href').includes(current)) {
+                a.classList.add('active-link');
+            }
+        });
+    });
+});

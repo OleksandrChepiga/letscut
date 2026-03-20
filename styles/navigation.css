@@ -1,42 +1,104 @@
-/* Базові стилі ПК */
+/* --- БАЗОВІ СТИЛІ ПК --- */
 .navigation {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 65px;
-    background-color: #004bff;
+    height: 80px;
+    background-color: #ffffffdc;
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0 20px;
+    /* Розподіляємо: Лого зліва, Меню справа */
+    justify-content: space-between; 
+    padding: 0 90px;
     box-sizing: border-box;
     z-index: 1000;
-    box-shadow: 0 10px 15px #00000033;
+    box-shadow: 0 5px 15px #52525218;
 }
 
+/* Контейнер логотипа */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none !important; /* Прибираємо підкреслення */
+    user-select: none; /* Забороняємо виділення тексту мишкою */
+    outline: none;
+}
+
+.nav-logo img {
+    height: 42px;
+    width: auto;
+    display: block;
+}
+
+/* Стиль тексту біля лого */
+.logo-text {
+    color: #000000 !important;
+    font-family: var(--heading-font);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none !important;
+    white-space: nowrap; /* Щоб текст не переносився */
+}
+
+/* Навігація (список посилань) */
+/* Навігація (список посилань) */
 nav {
     display: flex;
-    gap: 30px; 
+    gap: 20px; /* Трохи збільшив gap для простору підкреслення */
     align-items: center;
     height: 100%;
 }
 
+/* Навігація */
 nav a {
     text-decoration: none;
-    color: #ffffff;
-    font-family: var(--font-family-title);
+    color: #1c221e;
+    font-family: var(--nav-font);
     font-size: 16px;
-    font-weight: 450;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    position: relative;
+    font-weight: 600;
+    position: relative; /* База для лінії */
+    padding: 8px 4px;
+    transition: color 0.3s ease;
+    background: none !important; /* Прибираємо старий фон при наведенні */
 }
 
+/* Створення лінії */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Ставимо початкову точку в центр */
+    width: 0; /* Початкова ширина — 0 */
+    height: 2px;
+    background-color: #004BFF;
+    transition: width 0.3s ease, left 0.3s ease; /* Додаємо плавність для обох параметрів */
+    transform: translateX(-50%); /* Центруємо лінію відносно її власної ширини */
+}
 
+/* Ефект при наведенні */
+nav a:hover {
+    color: #004BFF;
+    transform: none !important; /* Скасовуємо підстрибування вгору */
+}
+
+nav a:hover::after {
+    width: 100%; /* Лінія розширюється до країв */
+}
+
+/* Активний стан (для JS) */
+nav a.active-link {
+    color: #004BFF;
+}
+
+nav a.active-link::after {
+    width: 100%; /* Лінія зафіксована для активного розділу */
+}
+
+/* Бургер-меню (приховано на ПК) */
 .burger-menu {
     display: none;
     flex-direction: column;
@@ -48,75 +110,68 @@ nav a {
 .burger-menu span {
     width: 28px;
     height: 3px;
-    background-color: #007bff;
+    background-color: #ffffff; /* Змінив на білий, щоб було видно на синьому */
     border-radius: 2px;
     transition: 0.3s;
 }
 
-/* --- МОБІЛЬНА ВЕРСІЯ (Виправлена підкладка) --- */
+/* --- МОБІЛЬНА ВЕРСІЯ (До 768px) --- */
 @media (max-width: 768px) {
     .navigation {
-        background-color: transparent; /* Прибираємо білу смугу зверху */
+        background-color: transparent;
         backdrop-filter: none;
         justify-content: flex-end; /* Бургер праворуч */
         height: 60px;
-        box-shadow: 0 0 0 #ffffff00;
+        box-shadow: none;
+        padding: 0 20px;
+    }
+
+    /* ПОВНЕ ПРИХОВУВАННЯ ЛОГО НА МОБІЛКАХ */
+    .nav-logo, .logo-text {
+        display: none !important;
     }
 
     .burger-menu {
         display: flex;
-        margin-right: 10px;
     }
 
-    /* Анімація хрестика */
+    /* Анімація бургера у хрестик */
     .burger-menu.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .burger-menu.open span:nth-child(2) { opacity: 0; }
     .burger-menu.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
+    /* Випадаюче меню мобілки */
     nav {
-        display: none; /* Сховано за замовчуванням */
+        display: none;
         position: absolute;
-        top: 55px; /* Прямо під бургер-кнопкою */
+        top: 65px;
         right: 20px;
-        
-        /* Виправлення підкладки */
         background-color: white !important;
-        height: auto !important; /* Розтягується по контенту */
-        width: max-content; /* Ширина по тексту */
-        min-width: 130px;
-        
+        height: auto !important;
+        width: max-content;
+        min-width: 160px;
         flex-direction: column;
         align-items: flex-start;
-        padding: 15px 20px; /* Рівномірні відступи */
-        gap: 12px;
-        
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        padding: 20px;
+        gap: 15px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         z-index: 1050;
-        box-sizing: border-box;
     }
 
     nav.active {
-        display: flex; /* Показуємо весь блок при кліку */
+        display: flex;
     }
 
     nav a {
-        height: auto !important; /* Скидаємо висоту 100% з ПК версії */
+        color: #333 !important;
+        padding: 8px 0;
         width: 100%;
-        font-size: 16px;
-        color: #444;
-        padding: 4px 0;
-        justify-content: flex-start;
+        font-weight: 600;
     }
 
-    /* Вимикаємо синю лінію на мобілках */
-    nav a::after {
-        display: none !important;
-    }
-
-    /* Тільки зміна кольору тексту при натисканні */
-    nav a:active, nav a:hover {
-        color: #0066ff;
+    nav a:hover {
         background: none;
+        color: #004bff !important;
     }
 }

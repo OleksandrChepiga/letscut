@@ -2,62 +2,98 @@
    ГОЛОВНИЙ БЛОК (HERO SECTION)
    ========================================================================== */
 
-   .main-box {
+.main-box {
     display: flex;
-    flex-direction: row;        /* Елементи в лінію на десктопі */
-    justify-content: center;    /* Центрування по горизонталі */
-    align-items: center;        /* Центрування по вертикалі */
-    gap: 60px;                  /* Відстань між лого та текстом */
-    padding: 100px 20px 80px;   /* Відступи: зверху(під меню), боки, знизу */
-    max-width: 1200px;          /* Обмежуємо ширину контенту */
-    margin: 0 auto 60px;        /* Центруємо весь блок на сторінці */
-    min-height: 60vh;           /* Мінімальна висота секції */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+    padding: 120px 20px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 60vh;
+    /* Приховуємо виліт за межі контейнера */
+    overflow: hidden; 
 }
 
 /* Контейнер для логотипу */
 .main-logo {
-    flex: 1;                    /* Займає половину простору */
+    flex: 1;
     display: flex;
-    justify-content: flex-end;  /* Притискаємо лого до центру */
+    justify-content: flex-end;
 }
 
 .main-logo img {
     max-width: 100%;
-    width: 450px;               /* Оптимальний розмір лого */
+    width: 460px;
     height: auto;
     display: block;
-    border-radius: 20px;        /* М'які кути для фото */
-    transition: transform 0.5s ease;
+    border-radius: 20px;
+    /* М'який ефект при наведенні мишкою */
+    transition: transform 0.3s ease-out;
 }
 
-/* Ефект при наведенні на лого */
-.main-logo img:hover {
-    transform: scale(1.02);
-}
 
 /* Контейнер для тексту */
 .main-content {
-    flex: 1;                    /* Займає другу половину простору */
-    text-align: left;           /* Текст зліва на десктопі */
+    flex: 1;
+    text-align: left;
 }
 
 .main-content h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 42px;            /* Великий виразний заголовок */
-    font-weight: 800;           /* Максимальна жирність */
-    margin: 0;
-    color: #2d2d2d;             /* Темно-сірий (виглядає дорожче за чисто чорний) */
+    font-family: var(--heading-font);
+    font-size: 56px;
+    font-weight: 700;
+    margin: 0 0 20px;
+    color: var(--color-title);
     line-height: 1.1;
-    letter-spacing: -1px;
 }
 
-/* Якщо захочеш виділити назву letscut іншим кольором через <span> */
+.main-content p {
+    font-family: var(--nav-font);
+    max-width: 450px;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-desc);
+    line-height: 1.1;
+}
+
 .main-content h1 span {
     color: #0066ff;
 }
 
 /* ==========================================================================
-   АДАПТИВНІСТЬ (ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ)
+   ДИНАМІЧНА АНІМАЦІЯ (ТІЛЬКИ ДЛЯ ФОТО НА ПК)
+   ========================================================================== */
+
+@keyframes fastSlideIn {
+    0% {
+        opacity: 0;
+        /* Починаємо зліва, трохи меншим розміром для об'єму */
+        transform: translateX(-150px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        /* Фінальна позиція */
+        transform: translateX(0) scale(1);
+    }
+}
+
+/* Застосовуємо тільки для десктопів */
+@media (min-width: 993px) {
+    .main-logo {
+        opacity: 0; /* Ховаємо до старту */
+        /* 0.7s — тривалість (швидко)
+           cubic-bezier — різкий ривок на початку і плавне "докатування"
+           0.2s — невелика затримка після завантаження 
+        */
+        animation: fastSlideIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    }
+}
+
+/* ==========================================================================
+   АДАПТИВНІСТЬ (ПЛАНШЕТИ ТА МОБІЛЬНІ)
    ========================================================================== */
 
 @media (max-width: 992px) {
@@ -65,8 +101,24 @@
         gap: 30px;
     }
     .main-content h1 {
+        font-size: 36px !important;
+        font-weight: 800;
+        margin-bottom: -30px;
+    }
+    .main-content p {
+        display: none;
+    }
+    
+    .main-content h1 {
         font-size: 32px;
     }
+
+    /* На планшетах/телефонах анімація вимкнена */
+    .main-logo {
+        opacity: 1;
+        transform: none;
+    }
+
     .main-logo img {
         width: 350px;
     }
@@ -74,26 +126,30 @@
 
 @media (max-width: 768px) {
     .main-box {
-        flex-direction: column-reverse; /* На мобілці: спочатку заголовок, потім картинка */
+        flex-direction: column-reverse; /* Текст над фото */
         text-align: center;
-        padding-top: 120px;             /* Більше місця під бургер-меню */
+        padding-top: 120px;
         gap: 40px;
     }
 
     .main-content {
-        text-align: center;             /* Текст по центру на мобілці */
+        text-align: center;
     }
 
     .main-content h1 {
-        font-size: 26px;                /* Зменшуємо шрифт для малих екранів */
-        line-height: 1.3;
+        font-size: 36px !important;
+        font-weight: 800;
+        margin-bottom: -30px;
+    }
+    .main-content p {
+        display: none;
     }
 
     .main-logo {
-        justify-content: center;        /* Лого по центру */
+        justify-content: center;
     }
 
     .main-logo img {
-        width: 260px;                   /* Компактне лого для телефонів */
+        width: 260px;
     }
 }

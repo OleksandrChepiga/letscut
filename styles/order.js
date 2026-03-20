@@ -1,5 +1,6 @@
-const SERVER_URL = "https://letscut-ur97.onrender.com"; // Перевір, щоб це було посилання з твого Render
+const SERVER_URL = "https://letscut-ur97.onrender.com";
 
+// Функція генерації ID замовлення (залишаємо як було)
 function generateOrderID() {
     const now = new Date();
     const datePart = now.getFullYear().toString().slice(-2) + 
@@ -9,8 +10,29 @@ function generateOrderID() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Будимо сервер
+    // 1. Будимо сервер при завантаженні сторінки
     fetch(`${SERVER_URL}/ping`).catch(() => {});
+
+    // --- НОВИЙ БЛОК: АВТОЗАПОВНЕННЯ ТАРИФУ З URL ---
+    const urlParams = new URLSearchParams(window.location.search);
+    const tariffFromUrl = urlParams.get('tariff') || 'Unique'; // За замовчуванням Custom
+
+    const tariffHiddenInput = document.getElementById('tariff-select');
+    const tariffDisplay = document.getElementById('tariff-display');
+
+    // Словник для відображення назв користувачу
+    const tariffNames = {
+        'Shorts': 'Shorts (Вертикальне)',
+        'Video': 'Video (Горизонтальне)',
+        'Unique': 'Unique (Індивідуальне)'
+    };
+
+    if (tariffHiddenInput && tariffDisplay) {
+        tariffHiddenInput.value = tariffFromUrl;
+        // Тепер використовуємо .value, бо це input
+        tariffDisplay.value = tariffNames[tariffFromUrl] || tariffFromUrl; 
+    }
+    // ----------------------------------------------
 
     const orderForm = document.getElementById('complex-order-form');
     const sendBtn = document.getElementById('send-btn');
@@ -25,16 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (btnText) btnText.innerText = 'Надсилаємо...';
             }
 
-            // Збираємо дані точно по твоїх ID
             const currentOrderID = generateOrderID();
             const copyrightCheck = document.getElementById('copyright-check');
             
+            // Збираємо дані (поле tariff-select тепер приховане, але дані з нього беруться так само)
             const templateParams = {
                 order_id: currentOrderID,
                 name: document.getElementById('name').value,
                 phone: document.getElementById('phone').value,
                 email: document.getElementById('email').value,
-                tariff: document.getElementById('tariff-select').value, // Було tariff, стало tariff-select
+                tariff: document.getElementById('tariff-select').value,
                 deadline: document.getElementById('deadline').value,
                 link: document.getElementById('link').value,
                 music: document.getElementById('music').value || "Не вказано",
@@ -66,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Твій код маски телефону (залишаємо без змін)
+    // Маска телефону (без змін)
     const phoneInput = document.getElementById('phone');
     if (phoneInput) {
         phoneInput.addEventListener('input', function(e) {
