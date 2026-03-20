@@ -118,7 +118,7 @@ nav a.active-link::after {
 /* --- МОБІЛЬНА ВЕРСІЯ (До 768px) --- */
 @media (max-width: 768px) {
     .navigation {
-        background-color: transparent;
+        background-color: #004bff;
         backdrop-filter: none;
         justify-content: flex-end; /* Бургер праворуч */
         height: 60px;
