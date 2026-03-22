@@ -45,55 +45,53 @@
 
 /* Навігація (список посилань) */
 /* Навігація (список посилань) */
+/* 1. Контейнер: додаємо відступи між посиланнями тут */
 nav {
     display: flex;
-    gap: 20px; /* Трохи збільшив gap для простору підкреслення */
+    gap: 25px; /* Регулюйте відстань між пунктами меню тут */
     align-items: center;
     height: 100%;
 }
 
-/* Навігація */
+/* 2. Посилання: прибираємо горизонтальний padding */
 nav a {
     text-decoration: none;
     color: #1c221e;
     font-family: var(--nav-font);
     font-size: 16px;
     font-weight: 600;
-    position: relative; /* База для лінії */
-    padding: 8px 4px;
+    position: relative;
+    /* padding було 8px 4px, ставимо 8px зверху/знизу і 0 з боків */
+    padding: 8px 0; 
     transition: color 0.3s ease;
-    background: none !important; /* Прибираємо старий фон при наведенні */
 }
 
-/* Створення лінії */
+/* 3. Лінія: тепер 100% ширини буде дорівнювати ширині тексту */
 nav a::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0; /* Тепер лінія прив'язана до лівого краю */
-    width: 0; 
+    left: 0;
+    width: 0;
     height: 2px;
     background-color: #004BFF;
-    transition: width 0.3s ease; /* transition для left більше не потрібен */
-    /* transform: translateX(-50%);  <-- Цей рядок видаляємо або закоментуємо */
+    transition: width 0.3s ease;
 }
+
+nav a:hover::after,
+nav a.active-link::after {
+    width: 100%; /* Тепер вона чітко під літерами */
+}
+
 /* Ефект при наведенні */
 nav a:hover {
     color: #004BFF;
     transform: none !important; /* Скасовуємо підстрибування вгору */
 }
 
-nav a:hover::after {
-    width: 100%; /* Лінія розширюється до країв */
-}
-
 /* Активний стан (для JS) */
 nav a.active-link {
     color: #004BFF;
-}
-
-nav a.active-link::after {
-    width: 100%; /* Лінія зафіксована для активного розділу */
 }
 
 /* Бургер-меню (приховано на ПК) */
