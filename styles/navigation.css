@@ -70,14 +70,13 @@ nav a::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50%; /* Ставимо початкову точку в центр */
-    width: 0; /* Початкова ширина — 0 */
+    left: 0; /* Тепер лінія прив'язана до лівого краю */
+    width: 0; 
     height: 2px;
     background-color: #004BFF;
-    transition: width 0.3s ease, left 0.3s ease; /* Додаємо плавність для обох параметрів */
-    transform: translateX(-50%); /* Центруємо лінію відносно її власної ширини */
+    transition: width 0.3s ease; /* transition для left більше не потрібен */
+    /* transform: translateX(-50%);  <-- Цей рядок видаляємо або закоментуємо */
 }
-
 /* Ефект при наведенні */
 nav a:hover {
     color: #004BFF;
