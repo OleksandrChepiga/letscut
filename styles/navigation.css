@@ -85,13 +85,11 @@ nav a.active-link::after {
 
 /* Ефект при наведенні */
 nav a:hover {
-    color: #004BFF;
     transform: none !important; /* Скасовуємо підстрибування вгору */
 }
 
 /* Активний стан (для JS) */
 nav a.active-link {
-    color: #004BFF;
 }
 
 /* Бургер-меню (приховано на ПК) */
