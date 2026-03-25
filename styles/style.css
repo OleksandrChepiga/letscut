@@ -482,7 +482,7 @@ main .section:nth-child(even) {
 
     .nav__content {
         justify-content: space-between;
-        padding-inline: 90px;
+        padding-inline: 30px;
     }
 
     .nav__logo {
