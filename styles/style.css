@@ -1736,8 +1736,51 @@ select:focus {
         opacity: 1 !important;
     }
 }
+
+
 /* ============================================================
-   Disable animations & transitions on mobile
+   DISABLE ANIMATIONS ON MOBILE (Under 768px)
    ============================================================ */
+
+@media screen and (max-width: 768px) {
+    /* Вимикаємо CSS transitions (плавні зміни станів) */
+    *, 
+    *::before, 
+    *::after {
+        transition: none !important;
+        transition-duration: 0s !important;
+        animation: none !important;
+        animation-duration: 0s !important;
+    }
+
+    /* Вимикаємо ефекти при наведенні (hover), які не потрібні на тач-скрінах */
+    .schedule__day:hover,
+    .portfolio__item:hover,
+    .tariff:hover,
+    .contact:hover,
+    .form-section-box:hover,
+    .copyright-box:hover {
+        transform: none !important;
+        box-shadow: var(--card-shadow) !important;
+        border-color: var(--card-border) !important;
+    }
+
+    /* Вимикаємо специфічні анімації, як-от поява Hero-лого */
+    .hero__logo {
+        animation: none !important;
+        opacity: 1 !important;
+    }
+
+    /* Вимикаємо анімацію випадання відповіді у FAQ для миттєвого відкриття */
+    .faq__answer {
+        transition: none !important;
+    }
+    
+    /* Запобігаємо приховуванню елементів, що чекають на scroll-анімацію */
+    [data-animate] {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
 
 
