@@ -1740,10 +1740,4 @@ select:focus {
    Disable animations & transitions on mobile
    ============================================================ */
 
-@media screen and (max-width: 768px) {
-    * {
-        animation: none !important;
-        transition: none !important;
-    }
-}
 
