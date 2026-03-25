@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>Замовлення відеоролика</title>
+    <meta name="description" content="Якісний відеомонтаж від let's cut (Олександра Чепіги). Створення відео для соцмереж (Shorts, Reels), сімейних архівів та реклами. Швидко, якісно та доступно по всій Україні.">
+    <link rel="icon" type="image/png" href="../logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="../styles/burger-nav-scripts.js" defer></script>
+    <script src="../styles/order.js" defer></script>
+    <script src="../styles/scripts.js" defer></script>
+</head>
+<body>
+    <div class="order-wrapper">
+        <header class="order-header">
+            <a href="/" class="back-btn"><i class="fa-solid fa-arrow-left"></i> На головну</a>
+            <img src="../logo.png" alt="let's cut" class="order-logo">
+        </header>
+
+        <main class="order-container">
+            <div class="order-info">
+                <h1>Заповніть технічне завдання</h1>
+                <p>Щоб подати заявку на відеомонтаж ролика та допомогти мені із організацією моментів, заповніть технічне завдання.</p>
+            </div>
+
+            <form id="complex-order-form" class="extended-form">
+
+                <div class="form-section-box">
+                    <h3><i class="fa-solid fa-address-card"></i> Контактні дані</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Ваше прізвище та ім'я*</label>
+                            <input type="text" id="name" name="name" placeholder="Олександр Чепіга" required minlength="2" autocomplete="name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">
+                                Номер телефону*
+                                <span class="tooltip-icon" data-tooltip="Для швидкого зв'язку та узгодження правок у месенджерах.">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                </span>
+                            </label>
+                            <div class="phone-input-wrapper">
+                                <span class="phone-prefix">+380</span>
+                                <input type="tel"
+                                       id="phone"
+                                       name="phone"
+                                       inputmode="numeric"
+                                       placeholder="00 000 00 00"
+                                       maxlength="15"
+                                       required>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>
+                                Email*
+                                <span class="tooltip-icon" data-tooltip="На цю пошту прийде копія вашого замовлення та готове відео.">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                </span>
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="example@gmail.com" required autocomplete="email">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section-box">
+                    <h3><i class="fa-solid fa-sliders"></i> Деталі проєкту</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Ваш тариф:</label>
+                            <input type="text" id="tariff-display" class="tariff-display" readonly tabindex="-1">
+                            <input type="hidden" id="tariff-select" name="tariff">
+                        </div>
+                        <div class="form-group">
+                            <label>Терміновість</label>
+                            <select id="deadline" name="deadline" required>
+                                <option value="" disabled selected>Бажаний термін*</option>
+                                <option value="2-4 дні">Стандарт (2-4 дні)</option>
+                                <option value="До 24 годин">Терміново (до 24 годин)</option>
+                                <option value="Не поспішаю">Не поспішаю</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="link">
+                            Посилання на вихідні матеріали*
+                            <span class="tooltip-icon" data-tooltip="Будь ласка, відкрийте доступ до файлів у хмарному сховищі.">
+                                <i class="fa-solid fa-circle-info"></i>
+                            </span>
+                        </label>
+                        <input type="url" id="link" name="link" placeholder="https://drive.google.com/..." required autocomplete="url">
+                    </div>
+                </div>
+
+                <div class="form-section-box">
+                    <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Творчі побажання</h3>
+                    <div class="form-group full-width">
+                        <label>Музичний супровід</label>
+                        <input type="text" id="music" name="music" placeholder="Трендова, без авторських прав, конкретний трек..." autocomplete="on">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Детальний опис задачі*</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Опишіть побажання: стиль монтажу, субтитри, динаміка..." required autocomplete="on"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group full-width copyright-box">
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="copyright_transfer" id="copyright-check">
+                        <div class="checkbox-text">
+                            <p class="checkbox-header">
+                                Передача авторських прав (+5%)
+                                <span class="tooltip-icon" data-tooltip="Ви отримуєте право використовувати відео в офіційній рекламі без згадки автора."></span>
+                            </p>
+                            <p class="checkbox-desc">Якщо цей проєкт призначений для офіційної реклами або комерційного використання, вам необхідно отримати повні авторські права. Це підтверджує, що контентмейкер не має до вас жодних претензій щодо подальшого використання відео.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <a href="/" class="cancel-btn">Скасувати</a>
+                    <button type="submit" id="send-btn" class="submit-btn">
+                        <span>Надіслати</span>
+                    </button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <button id="backToTop" class="back-to-top" title="Нагору">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+</body>
+</html>
