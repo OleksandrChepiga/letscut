@@ -178,7 +178,7 @@ template {
     --padding-inline-section: 20px;
     --padding-block-section: 50px;
     --margin-bottom-title: 10px;
-    --margin-bottom-desc: 35px;
+    --margin-bottom-desc: 50px;
 
     --color-title: #000219;
     --body-color: #3a3a3a;
@@ -235,7 +235,7 @@ body.loaded .page-transition {
 
 .section {
     width: 100%;
-    padding: 80px 20px;
+    padding: 120px 20px;
     box-sizing: border-box;
 }
 
@@ -258,7 +258,7 @@ main .section:nth-child(even) {
     color: #202020;
     letter-spacing: 0;
     text-align: center;
-    margin-bottom: var(--margin-bottom-title);
+    margin-bottom: var(--margin-bottom-title) !important;
     position: relative;
     display: table;
     padding-bottom: 15px;
@@ -283,7 +283,7 @@ main .section:nth-child(even) {
     color: var(--body-color);
     text-align: center;
     max-width: 700px;
-    margin-bottom: var(--margin-bottom-desc);
+    margin-bottom: var(--margin-bottom-desc) !important;
 }
 
 
@@ -359,7 +359,7 @@ main .section:nth-child(even) {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 80px;
+    padding: 0 40px;
     box-sizing: border-box;
 }
 
@@ -462,7 +462,7 @@ main .section:nth-child(even) {
 .nav__burger-line {
     width: 28px;
     height: 3px;
-    background-color: #000;
+    background-color: #004bff;
     border-radius: 2px;
     transition: 0.3s;
     display: block;
@@ -509,7 +509,7 @@ main .section:nth-child(even) {
     }
 
     .nav__link {
-        color: #1c221e;
+        color: #1d1c22;
         padding: 8px 4px;
         width: auto;
     }
@@ -562,7 +562,7 @@ main .section:nth-child(even) {
 }
 
 .hero__content {
-    text-align: center;
+    text-align: left ;
 }
 
 .hero__title {
@@ -576,6 +576,7 @@ main .section:nth-child(even) {
 
 .hero__description {
     font-family: var(--nav-font);
+    text-align: left;
     max-width: 450px;
     font-size: 20px;
     font-weight: 600;
@@ -722,7 +723,7 @@ main .section:nth-child(even) {
     gap: 15px;
     justify-content: center;
     align-items: stretch;
-    width: 100%;
+    width: 80%;
 }
 
 .schedule__day {
@@ -742,13 +743,11 @@ main .section:nth-child(even) {
 }
 
 .schedule__day:hover {
-    transform: translateY(-5px);
     border-color: var(--universal-hover);
-    box-shadow: 0 10px 28px rgba(0, 75, 255, 0.14);
+    box-shadow: 0 0 15px #004bff29;
 }
 
 .schedule__day:hover .schedule__day-name {
-    color: var(--universal-hover);
 }
 
 .schedule__day-name {
@@ -756,6 +755,7 @@ main .section:nth-child(even) {
     font-weight: 700;
     font-size: 20px;
     color: var(--color-title);
+    transition: all 0.3s ease;
 }
 
 .schedule__day-status {
@@ -785,7 +785,7 @@ main .section:nth-child(even) {
 }
 
 .schedule__day-time {
-    font-family: var(--heading-font);
+    font-family: var(--body-font);
     font-size: 12px;
     font-weight: 600;
     margin-top: 12px;
@@ -834,7 +834,7 @@ main .section:nth-child(even) {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-    width: 100%;
+    width: 85%;
 }
 
 .portfolio__item {
@@ -852,9 +852,8 @@ main .section:nth-child(even) {
 }
 
 .portfolio__item:hover {
-    transform: translateY(-6px);
     border-color: var(--universal-hover);
-    box-shadow: 0 14px 36px rgba(0, 75, 255, 0.16);
+    box-shadow: 0 0 15px #004bff29;
 }
 
 .portfolio__thumbnail {
@@ -973,16 +972,16 @@ main .section:nth-child(even) {
     flex-wrap: wrap;
     gap: 25px;
     justify-content: center;
-    width: 100%;
+    width: 75%;
     box-sizing: border-box;
 }
 
 .tariff {
-    flex: 0 0 100%;
+    flex: 0 0 75%;
     background-color: var(--card-color);
-    padding: 30px 20px;
+    padding: 40px 60px;
     border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: all 0.2s ease;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -992,9 +991,9 @@ main .section:nth-child(even) {
 }
 
 .tariff:hover {
-    transform: translateY(-7px);
+    transform: translateX(10px);
     border-color: var(--universal-hover);
-    box-shadow: 0 16px 40px rgba(0, 75, 255, 0.16);
+    box-shadow: 0 0 15px #004bff29;
 }
 
 .tariff:hover .tariff__name {
@@ -1012,6 +1011,7 @@ main .section:nth-child(even) {
     padding-bottom: 10px;
     display: block;
     width: 100%;
+    transition: all 0.2s ease;
 }
 
 .tariff__desc {
@@ -1070,13 +1070,13 @@ main .section:nth-child(even) {
 .tariff__btn {
     display: inline-block;
     margin: auto auto 0 auto;
-    padding: 10px 35px;
+    padding: 10px 30px;
     font-size: 18px;
     background: #004bff;
     border: 2px solid #004bff;
     color: #fff;
     text-decoration: none;
-    border-radius: 15px;
+    border-radius: 12.5px;
     font-weight: 600;
     font-family: var(--heading-font);
     text-align: center;
@@ -1086,7 +1086,6 @@ main .section:nth-child(even) {
 .tariff__btn:hover {
     background: transparent;
     color: #004bff;
-    transform: scale(1.04);
 }
 
 @media screen and (min-width: 769px) {
@@ -1106,17 +1105,18 @@ main .section:nth-child(even) {
 
 .faq {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column !important;
+    align-items: center !important;   
 }
 
 .faq__item {
     background-color: var(--card-color);
-    margin-bottom: 15px;
+    margin: 0 auto 10px auto;
     overflow: hidden;
     border: var(--card-border);
     border-radius: 10px;
     transition: all 0.3s ease;
+    width: 80%;
 }
 
 .faq__question {
@@ -1217,7 +1217,7 @@ main .section:nth-child(even) {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    margin-top: 30px;
+    width: 75%;
 }
 
 .contact {
@@ -1234,7 +1234,7 @@ main .section:nth-child(even) {
 
 .contact:hover {
     border: var(--card-border-hover);
-    box-shadow: var(--card-shadow);
+    box-shadow: 0 0 15px #004bff29;
 }
 
 .contact__icon img {
@@ -1246,7 +1246,7 @@ main .section:nth-child(even) {
 .contact__title {
     font-family: var(--heading-font);
     font-weight: 700;
-    font-size: 20px;
+    font-size: 24px;
     color: var(--color-title);
     margin-top: 15px;
     margin-bottom: 5px;
@@ -1426,7 +1426,7 @@ main .section:nth-child(even) {
 
 .form-section-box:hover {
     border: var(--card-border-hover);
-    box-shadow: var(--card-shadow);
+    box-shadow: 0 0 15px #004bff29;
 }
 
 .form-section-box h3 {
@@ -1736,51 +1736,3 @@ select:focus {
         opacity: 1 !important;
     }
 }
-
-
-/* ============================================================
-   DISABLE ANIMATIONS ON MOBILE (Under 768px)
-   ============================================================ */
-
-@media screen and (max-width: 768px) {
-    /* Вимикаємо CSS transitions (плавні зміни станів) */
-    *, 
-    *::before, 
-    *::after {
-        transition: none !important;
-        transition-duration: 0s !important;
-        animation: none !important;
-        animation-duration: 0s !important;
-    }
-
-    /* Вимикаємо ефекти при наведенні (hover), які не потрібні на тач-скрінах */
-    .schedule__day:hover,
-    .portfolio__item:hover,
-    .tariff:hover,
-    .contact:hover,
-    .form-section-box:hover,
-    .copyright-box:hover {
-        transform: none !important;
-        box-shadow: var(--card-shadow) !important;
-        border-color: var(--card-border) !important;
-    }
-
-    /* Вимикаємо специфічні анімації, як-от поява Hero-лого */
-    .hero__logo {
-        animation: none !important;
-        opacity: 1 !important;
-    }
-
-    /* Вимикаємо анімацію випадання відповіді у FAQ для миттєвого відкриття */
-    .faq__answer {
-        transition: none !important;
-    }
-    
-    /* Запобігаємо приховуванню елементів, що чекають на scroll-анімацію */
-    [data-animate] {
-        opacity: 1 !important;
-        transform: none !important;
-    }
-}
-
-

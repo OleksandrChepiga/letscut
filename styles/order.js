@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Словник для відображення назв користувачу
     const tariffNames = {
-        'Shorts': 'Shorts (Вертикальне)',
-        'Video': 'Video (Горизонтальне)',
-        'Unique': 'Unique (Індивідуальне)'
+        'Shorts': 'Shorts (Формат 9/16)',
+        'Video': 'Video (Формат 16/9)',
+        'Unique': 'Unique (Свій формат)'
     };
 
     if (tariffHiddenInput && tariffDisplay) {
