@@ -451,6 +451,69 @@ main .section:nth-child(even) {
     width: 100%;
 }
 
+  .nav-links li {
+    position: relative; /* Важливо для позиціонування випадного меню */
+  }
+  
+  .nav-links li a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  .nav__item--dropdown {
+    position: relative; /* Список буде рівнятися по лівому краю цього li */
+    display: flex;      /* Допомагає вирівняти посилання всередині */
+    align-items: center;
+}
+
+  .nav__dropdown {
+    list-style: none;
+    position: absolute;
+    top: 100%; /* З'являється рівно під посиланням */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* Центруємо та трохи зміщуємо вниз */
+    background-color: #ffffff;
+    min-width: 200px;
+    padding: 8px 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    
+    /* Ховаємо за замовчуванням */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* Посилання всередині списку */
+.nav__dropdown-link {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.1s ease;
+    text-align: left;
+}
+
+.nav__dropdown-link:hover {
+    background-color: #f5f8ff; /* Легкий блакитний фон при наведенні */
+    color: #007bff; /* Ваш основний колір */
+}
+
+/* МАГІЯ: Показуємо список при наведенні миші */
+.nav__item--dropdown:hover .nav__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* Плавне підняття вгору */
+}
+
+
 .nav__burger {
     display: flex;
     flex-direction: column;
