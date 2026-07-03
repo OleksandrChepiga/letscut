@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnText = sendBtn ? sendBtn.querySelector('span') : null;
 
     const tariffNames = {
-        'Light': 'Budget (Від 200 грн)',
-        'Smart': 'Classic (Від 320 грн)',
-        'Prime': 'Expert (Від 500 грн)'
+        'Light': 'Light (Від 200 грн)',
+        'Smart': 'Smart (Від 320 грн)',
+        'Prime': 'Prime (Від 500 грн)'
     };
 
     // --- ФУНКЦІЯ РЕНДЕРУ ДИНАМІЧНОГО ЧЕКБОКСА ---
