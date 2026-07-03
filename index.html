@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>Let's Cut - Сервіс відеомонтажу по всій Україні</title>
+    <meta name="description" content="Якісний відеомонтаж від let's cut (Олександра Чепіги). Створення відео для соцмереж (Shorts, Reels), сімейних архівів та реклами. Швидко, якісно та доступно по всій Україні.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100...1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100...1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100...1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/png" href="WinFramePreview.png">
+
+    <script src="styles/burger-nav-scripts.js" defer></script>
+    <script src="styles/order.js" defer></script>
+    <script src="styles/scripts.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <div class="page-transition"></div>
+
+    <header class="nav">
+        <div class="nav__content">
+            <a href="#hero" class="nav__logo">
+                <img src="Let'sCutText.png" alt="Logo">
+            </a>
+
+            <div class="nav__burger" id="burger-btn">
+                <span class="nav__burger-line"></span>
+                <span class="nav__burger-line"></span>
+                <span class="nav__burger-line"></span>
+            </div>
+
+            <nav id="nav-menu" class="nav__menu">
+                <a href="#hero" class="nav__link">Головна</a>
+                <a href="#about" class="nav__link">Про автора</a>
+                <a href="#schedule" class="nav__link">Графік</a>
+                <a href="#works" class="nav__link">Роботи</a>
+                <a href="#tariffs" class="nav__link">Тарифи</a>
+                <a href="#faq" class="nav__link">F.A.Q</a>
+                <a href="#contacts" class="nav__link">Контакти</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="section hero">
+            <div class="hero__logo hero__logo--pc">
+                <img src="Let'sCutFull.png" alt="let's cut logo pc">
+            </div>
+        
+            <div class="hero__logo hero__logo--mobile">
+                <img src="Let'sCutMobile.png" alt="let's cut logo mobile">
+            </div>
+        </section>
+
+    <section id="about" class="section about">
+        <h2 class="section__title" data-animate="animate__fadeInDown">Про автора</h2>
+        <p class="section__subtitle" data-animate="animate__fadeInDown" data-delay="100">Коротко про мене та мій досвід у відеомонтажі</p>
+
+        <div class="section__content about__layout">
+            <div class="about__text-col" data-animate="animate__fadeInLeft" data-delay="150">
+                <div class="about__text">
+                    <p>Привіт! Я Олександр Васильович Чепіга, засновник <a href="#hero" class="about__link">WinFrame</a>. У свої 15 я зрозумів головне: зараз перемагає той, хто робить круті короткі відео. Саме тому я зосередився виключно на монтажі Reels, TikTok та Shorts.</p>
+                    <p>Я допомагаю брендам та особистим архівам зазвучати по-новому. Використовуючи максимум можливостей CapCut, я створюю не просто відео, а цілісні історії з правильним темпом та акцентами. Дистанційний формат дозволяє мені допомагати клієнтам по всій Україні, перебуваючи вдома на Чернігівщині.</p>
+                    <p>Якщо вам потрібен монтаж, який працює на ваш результат — я на зв'язку в соцмережах!</p>
+                </div>
+            </div>
+
+            <div class="about__photo" data-animate="animate__fadeInRight" data-delay="250">
+                <img src="icons/about.jpg" class="about__image" alt="Олександр Чепіга">
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="section schedule">
+        <h3 class="section__title" data-animate="animate__fadeInDown">Графік роботи</h3>
+        <p class="section__subtitle" data-animate="animate__fadeInDown" data-delay="100">Плануйте замовлення заздалегідь. У вихідні я займаюся монтажем поточних проєктів, тому нові замовлення обробляються лише у робочі дні</p>
+
+        <div class="section__content schedule__calendar">
+            <div class="schedule__day schedule__day--work" data-animate="animate__fadeInUp" data-delay="0">
+                <span class="schedule__day-name">Пн</span>
+                <span class="schedule__day-status">Робочий</span>
+                <span class="schedule__day-time">15:00 - 19:00</span>
+            </div>
+            <div class="schedule__day schedule__day--work" data-animate="animate__fadeInUp" data-delay="70">
+                <span class="schedule__day-name">Вт</span>
+                <span class="schedule__day-status">Робочий</span>
+                <span class="schedule__day-time">15:00 - 19:00</span>
+            </div>
+            <div class="schedule__day schedule__day--work" data-animate="animate__fadeInUp" data-delay="140">
+                <span class="schedule__day-name">Ср</span>
+                <span class="schedule__day-status">Робочий</span>
+                <span class="schedule__day-time">15:00 - 19:00</span>
+            </div>
+            <div class="schedule__day schedule__day--work" data-animate="animate__fadeInUp" data-delay="210">
+                <span class="schedule__day-name">Чт</span>
+                <span class="schedule__day-status">Робочий</span>
+                <span class="schedule__day-time">15:00 - 19:00</span>
+            </div>
+
+            <div class="schedule__day schedule__day--off" data-animate="animate__fadeInUp" data-delay="280">
+                <span class="schedule__day-name">Пт</span>
+                <span class="schedule__day-status">Вихідний</span>
+            </div>
+
+            <div class="schedule__day schedule__day--off" data-animate="animate__fadeInUp" data-delay="350">
+                <span class="schedule__day-name">Сб</span>
+                <span class="schedule__day-status">Вихідний</span>
+            </div>
+
+            <div class="schedule__day schedule__day--work" data-animate="animate__fadeInUp" data-delay="420">
+                <span class="schedule__day-name">Нд</span>
+                <span class="schedule__day-status">Робочий</span>
+                <span class="schedule__day-time">15:00 - 19:00</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="works" class="section portfolio">
+        <h2 class="section__title" data-animate="animate__fadeInDown">Мої роботи</h2>
+        <p class="section__subtitle" data-animate="animate__fadeInDown" data-delay="100">Натисніть на відео, щоб переглянути його на YouTube</p>
+
+        <div class="section__content portfolio__grid">
+
+            <a href="https://youtube.com/shorts/Pb4T67w_B9A" target="_blank" class="portfolio__item" data-animate="animate__fadeInUp" data-delay="0">
+                <div class="portfolio__thumbnail">
+                    <img src="https://img.youtube.com/vi/Pb4T67w_B9A/maxresdefault.jpg" alt="Огляд iPhone 12">
+                    <div class="portfolio__overlay">
+                        <div class="portfolio__play-icon">
+                            <img src="icons/play-button.svg" alt="Play">
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio__info">
+                    <h3 class="portfolio__title">Звернення Зеленського</h3>
+                    <div class="portfolio__meta">
+                        <span class="portfolio__tariff">200 грн (Light)</span>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="https://www.youtube.com/shorts/CyFvAXWKQks" target="_blank" class="portfolio__item" data-animate="animate__fadeInUp" data-delay="150">
+                <div class="portfolio__thumbnail">
+                    <img src="https://img.youtube.com/vi/CyFvAXWKQks/maxresdefault.jpg" alt="Огляд iPhone 12">
+                    <div class="portfolio__overlay">
+                        <div class="portfolio__play-icon">
+                            <img src="icons/play-button.svg" alt="Play">
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio__info">
+                    <h3 class="portfolio__title">Нарізка із Іриною Кудошовою</h3>
+                    <div class="portfolio__meta">
+                        <span class="portfolio__tariff">320 грн (Smart)</span>
+                    </div>
+                </div>
+            </a>
+
+
+            <a href="https://youtube.com/shorts/UmjTMGotQ7g" target="_blank" class="portfolio__item" data-animate="animate__fadeInUp" data-delay="300">
+                <div class="portfolio__thumbnail">
+                    <img src="https://img.youtube.com/vi/UmjTMGotQ7g/maxresdefault.jpg" alt="Огляд iPhone 12">
+                    <div class="portfolio__overlay">
+                        <div class="portfolio__play-icon">
+                            <img src="icons/play-button.svg" alt="Play">
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio__info">
+                    <h3 class="portfolio__title">Огляд iPhone 12</h3>
+                    <div class="portfolio__meta">
+                        <span class="portfolio__tariff">320 грн (Smart)</span>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="https://www.youtube.com/shorts/D3_-TmDfQ5c" target="_blank" class="portfolio__item" data-animate="animate__fadeInUp" data-delay="450">
+                <div class="portfolio__thumbnail">
+                    <img src="https://img.youtube.com/vi/D3_-TmDfQ5c/maxresdefault.jpg" alt="Огляд iPhone 12">
+                    <div class="portfolio__overlay">
+                        <div class="portfolio__play-icon">
+                            <img src="icons/play-button.svg" alt="Play">
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio__info">
+                    <h3 class="portfolio__title">Про iPhone 13 Pro</h3>
+                    <div class="portfolio__meta">
+                        <span class="portfolio__tariff">720 грн (Prime)</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.youtube.com/shorts/ZmIOg8TUpMc" target="_blank" class="portfolio__item" data-animate="animate__fadeInUp" data-delay="600">
+                <div class="portfolio__thumbnail">
+                    <img src="https://img.youtube.com/vi/ZmIOg8TUpMc/maxresdefault.jpg" alt="Огляд iPhone 12">
+                    <div class="portfolio__overlay">
+                        <div class="portfolio__play-icon">
+                            <img src="icons/play-button.svg" alt="Play">
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio__info">
+                    <h3 class="portfolio__title">Особливості ноутбуків Lenovo</h3>
+                    <div class="portfolio__meta">
+                        <span class="portfolio__tariff">500 грн (Prime)</span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <section id="tariffs" class="section tariffs">
+        <h2 class="section__title" data-animate="animate__fadeInDown">Тарифи</h2>
+        <p class="section__subtitle" data-animate="animate__fadeInDown" data-delay="100">Оберіть тарифний пакет для його замовлення</p>
+
+        <div class="section__content tariffs__grid">
+            <div class="tariff" data-animate="animate__fadeInUp" data-delay="0">
+                <div class="tariff__header">
+                    <h3 class="tariff__name">Light</h3>
+                    <p class="tariff__desc">9/16; 1080x1920; 30FPS;</p>
+                    <div class="tariff__price">
+                        <span class="tariff__price-label">Від 200 грн</span>
+                    </div>
+                </div>
+                <ul class="tariff__features">
+                    <li class="tariff__feature">Тривалість відео не більше 1 хв</li>
+                    <li class="tariff__feature">Динамічний та швидкий монтаж</li>
+                    <li class="tariff__feature">Додавання простих субтитрів</li>
+                    <li class="tariff__feature">Накладання трендової музики</li>
+                    <li class="tariff__feature">До 2 виправлень</li>
+                </ul>
+                <a href="/order?tariff=Budget" class="tariff__btn">Замовити</a>
+            </div>
+
+            <div class="tariff" data-animate="animate__fadeInUp" data-delay="150">
+                <div class="tariff__header">
+                    <h3 class="tariff__name">Smart</h3>
+                    <p class="tariff__desc">9/16; 1080x1920; 60FPS;</p>
+                    <div class="tariff__price">
+                        <span class="tariff__price-label">Від 320 грн</span>
+                    </div>
+                </div>
+                <ul class="tariff__features">
+                    <li class="tariff__feature">Тривалість відео не більше 2 хв</li>
+                    <li class="tariff__feature">Додавання фільтрів та ефектів</li>
+                    <li class="tariff__feature">Додавання переходів та анімацій</li>
+                    <li class="tariff__feature">Додавання анімаційних субтитрів</li>
+                    <li class="tariff__feature">До 3 виправлень</li>
+                </ul>
+                <a href="/order?tariff=Classic" class="tariff__btn">Замовити</a>
+            </div>
+
+            <div class="tariff" data-animate="animate__fadeInUp" data-delay="300">
+                <div class="tariff__header">
+                    <h3 class="tariff__name">Prime</h3>
+                    <p class="tariff__desc">9/16; 1080x1920; 60FPS;</p>
+                    <div class="tariff__price">
+                        <span class="tariff__price-label">Від 500 грн</span>
+                    </div>
+                </div>
+                <ul class="tariff__features">
+                    <li class="tariff__feature">Тривалість відео не більше 3 хв</li>
+                    <li class="tariff__feature">Складні ефекти та переходи</li>
+                    <li class="tariff__feature">Звуковий дизайн (SFX)</li>
+                    <li class="tariff__feature">Створення обкладинки</li>
+                    <li class="tariff__feature">До 5 виправлень</li>
+                </ul>
+                <a href="/order?tariff=Expert" class="tariff__btn">Замовити</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section faq">
+        <h2 class="section__title" data-animate="animate__fadeInDown">F.A.Q</h2>
+        <p class="section__subtitle" data-animate="animate__fadeInDown" data-delay="100">Відповіді на головні можливі питання</p>
+
+        <div class="section__content faq__list">
+
+            <div class="faq__item" data-animate="animate__fadeInLeft" data-delay="80">
+                <button class="faq__question">
+                    №1 Відправлення матеріалів
+                    <svg class="faq__arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq__answer">
+                    <div class="faq__answer-body">
+                        <p>Найкращий спосіб відправити матеріали без втрати якості — завантажити їх на будь-яку хмару (Google Drive, WeTransfer або Fex.net) і надати посилання на папку, або ж відправити безпосередньо в Telegram, обов'язково обираючи опцію «Надіслати як файл». Це критично важливо для вертикальних форматів Reels, TikTok та Shorts, оскільки звичайні месенджери (Viber, Facebook) сильно стискають відео, що погіршує фінальну картинку при монтажі.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq__item" data-animate="animate__fadeInLeft" data-delay="160">
+                <button class="faq__question">
+                    №2 Внесення змін у готове відео
+                    <svg class="faq__arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq__answer">
+                    <div class="faq__answer-body">
+                        <p>Так, у кожен тариф входить певна кількість безкоштовних правок (від 2 до 7). Я завжди намагаюся довести результат до ідеалу, щоб ви були задоволені. Якщо правок більше, ніж доступно безкоштовно, то кожна наступна додає до загальної ціни 20 грн.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq__item" data-animate="animate__fadeInLeft" data-delay="240">
+                <button class="faq__question">
+                    №3 Спосіб оплати та її умови
+                    <svg class="faq__arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq__answer">
+                    <div class="faq__answer-body">
+                        <p>Розрахунок за монтаж відбувається в один етап: 100% оплата на карту після того, як ви переглянете готовий варіант відео (з захисним водяним знаком). Щойно оплата надійде, я відправляю вам повноцінний ролик для публікації в Reels, TikTok чи Shorts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq__item" data-animate="animate__fadeInLeft" data-delay="320">
+                <button class="faq__question">
+                    №4 Ймовірні затримки та форс-мажори
+                    <svg class="faq__arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq__answer">
+                    <div class="faq__answer-body">
+                        <p>Хоча я завжди дотримуюсь обумовлених термінів, іноді можливі незначні затримки через незалежні від мене обставини (форс-мажори), як-от тривалі відключення електроенергії або відсутність зв'язку. У таких випадках я обов’язково попереджаю вас заздалегідь, щоб ми могли скоригувати графік публікацій. Я ціную ваш час, тому в пріоритеті завжди залишається якісний результат навіть у складних умовах.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq__item" data-animate="animate__fadeInLeft" data-delay="320">
+                <button class="faq__question">
+                    №5 Гарантії виконання
+                    <svg class="faq__arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq__answer">
+                    <div class="faq__answer-body">
+                        <p>Основним принципом моєї роботи є прозорість та безпека розрахунків. Ви здійснюєте оплату лише після ознайомлення з фінальним результатом у форматі прев'ю з водяним знаком. Передбачена вашим тарифом кількість правок гарантує отримання відеоматеріалу, який повністю відповідає вашим вимогам. Таким чином, ви захищені від неякісного виконання та отримуєте чистий файл лише після повного погодження проєкту.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq__item" data-animate="animate__fadeInLeft" data-delay="320">
+                <button class="faq__question">
+                    №6 Пільги та знижки
+                    <svg class="faq__arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq__answer">
+                    <div class="faq__answer-body">
+                        <p>Сервіс WinFrame підтримує партнерські відносини з клієнтами та соціально важливими категоріями громадян. Фіксована знижка у розмірі 5% надається постійним замовникам (починаючи з п'ятого замовлення), військовослужбовцям ЗСУ, а також представникам волонтерських організацій. Для отримання спеціальних умов, будь ласка, повідомте про це під час первинного обговорення проєкту.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contacts" class="section contacts">
+        <h2 class="section__title" data-animate="animate__fadeInDown">Контакти</h2>
+        <p class="section__subtitle" data-animate="animate__fadeInDown" data-delay="100">Оберіть зручний для вас спосіб зв'язку</p>
+
+        <div class="section__content contacts__grid">
+
+            <div class="contact" data-animate="animate__fadeInUp" data-delay="0">
+                <div class="contact__icon">
+                    <img src="icons/telegram.svg" alt="Telegram">
+                </div>
+                <h3 class="contact__title">Telegram</h3>
+                <p class="contact__info">
+                    <a href="https://t.me/Oleksandr_Chepiha" class="contact__link" target="_blank">@Oleksandr_Chepiha</a>
+                </p>
+            </div>
+
+            <div class="contact" data-animate="animate__fadeInUp" data-delay="150">
+                <div class="contact__icon">
+                    <img src="icons/facebook.svg" alt="Facebook">
+                </div>
+                <h3 class="contact__title">Facebook</h3>
+                <p class="contact__info">
+                    <a href="https://www.fb.com/share/18JZbQisNv/" class="contact__link" target="_blank">Олександр Чепіга</a>
+                </p>
+            </div>
+
+            <div class="contact" data-animate="animate__fadeInUp" data-delay="300">
+                <div class="contact__icon">
+                    <img src="icons/email.svg" alt="Email">
+                </div>
+                <h3 class="contact__title">Email</h3>
+                <p class="contact__info">
+                    <a href="mailto:letscut.ua@gmail.com" class="contact__link">letscut.ua@gmail.com</a>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+
+            <div class="footer__info" data-delay="0">
+                <span class="footer__copyright">
+                    <a href="#hero" class="footer__copyright-link">©2026 Let's Cut - Всі права захищені</a>
+                </span>
+                <div class="footer__text">
+                    <p>Сайт був створений і належить Чепізі Олександру Васильовичу</p>
+                    <p>
+                        За допомогою звертатися в
+                        <a href="https://www.facebook.com/share/18JZbQisNv/?mibextid=wwXIfr" class="footer__link" target="_blank">Facebook,</a>
+                        <a href="https://t.me/Oleksandr_Chepiha" class="footer__link" target="_blank">Telegram,</a>
+                        або на <a href="mailto:oleksandrchepiga2023@gmail.com" class="footer__link" target="_blank">Gmail пошту</a>
+                    </p>
+                    <p>Актуальна версія сайту: 1.1.0 (30.06.2026)</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" title="Нагору">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+</body>
+</html>
