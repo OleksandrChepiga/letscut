@@ -1,5 +1,26 @@
 const SERVER_URL = "https://letscut-ur97.onrender.com";
 
+const extraOptions = {
+    'Light': {
+        id: 'opt-light',
+        key: 'Додаткова кольорокорекція',
+        label: 'Кольорокорекція',
+        desc: 'Професійна кольорокорекція для кращого вигляду.'
+    },
+    'Smart': {
+        id: 'opt-smart',
+        key: 'Саунд-дизайн',
+        label: 'Саунд-дизайн',
+        desc: 'Додавання звукових ефектів та обробка аудіо.'
+    },
+    'Prime': {
+        id: 'opt-prime',
+        key: 'Повний пакет (Motion Graphics)',
+        label: 'Motion Graphics',
+        desc: 'Складні анімації, титри та візуальні ефекти.'
+    }
+};
+
 // Функція генерації ID замовлення
 function generateOrderID() {
     const now = new Date();
