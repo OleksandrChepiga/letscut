@@ -4,20 +4,14 @@ const extraOptions = {
     'Light': {
         id: 'opt-light',
         key: 'Додаткова кольорокорекція',
-        label: 'Кольорокорекція',
-        desc: 'Професійна кольорокорекція для кращого вигляду.'
     },
     'Smart': {
         id: 'opt-smart',
         key: 'Саунд-дизайн',
-        label: 'Саунд-дизайн',
-        desc: 'Додавання звукових ефектів та обробка аудіо.'
     },
     'Prime': {
         id: 'opt-prime',
         key: 'Повний пакет (Motion Graphics)',
-        label: 'Motion Graphics',
-        desc: 'Складні анімації, титри та візуальні ефекти.'
     }
 };
 
@@ -45,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnText = sendBtn ? sendBtn.querySelector('span') : null;
 
     const tariffNames = {
-        'Light': 'Light (Від 200 грн)',
+        'Light': 'Light (Від 160 грн)',
         'Smart': 'Smart (Від 320 грн)',
-        'Prime': 'Prime (Від 500 грн)'
+        'Prime': 'Prime (Від 400 грн)'
     };
 
     // --- ФУНКЦІЯ РЕНДЕРУ ДИНАМІЧНОГО ЧЕКБОКСА ---
